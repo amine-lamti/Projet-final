@@ -24,7 +24,7 @@ password:{
 },
 phone:{
     type: Number,
-    required: false
+    required: true
 },
 date:{
     type: Date,
