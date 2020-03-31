@@ -16,7 +16,7 @@ mongoose.connect(db, { useNewUrlParser: true , useUnifiedTopology: true }, (err)
     }
 })
 
-app.use('/api/user', require('./routes/users'))
+app.use('/api/client', require('./routes/client'))
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/car', require('./routes/cars'))
 
