@@ -18,9 +18,29 @@ password:{
     type: String,
     required: true
 },
+numPermis:{
+    type: String,
+    required: true
+},
 phone:{
     type: Number,
-    required: false
+    required: true
+},
+adresse:{
+    type: String,
+    required: true
+},
+web:{
+    type: String,
+    required: true
+},
+ville:{
+    type: String,
+    required: true
+},
+logo:{
+    type: String,
+    required: true
 },
 date:{
     type: Date,

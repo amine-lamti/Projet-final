@@ -13,8 +13,23 @@ router.get('/', auth, (req, res) => {
 })
 
 // Add car
-router.post('/', (req, res) => {
-    res.send('add car')
+router.post('/', [auth, [
+    check('firstname', 'Please enter your first name').not().isEmpty(),
+    check('lastname', 'Please enter your last name').not().isEmpty(),
+]], (req, res) => {
+    const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.json({ errors: errors.array() });
+  }
+  const { firstname, lastname } = req.body
+  const newCar = new Car ({        
+                  firstname,
+                  lastname
+              })
+
+              newCar.save()
+                    .then(car => res.json(car))
+                    .catch(err => console.log(err.message))
 })
 
 // Delete car
