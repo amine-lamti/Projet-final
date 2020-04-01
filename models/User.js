@@ -1,7 +1,7 @@
 const mongoose=require('mongoose')
 
 
-const Userschema=mongoose.Schema({
+const UserSchema=mongoose.Schema({
     firstname:{
         type:String,
         required:true
@@ -33,3 +33,6 @@ const Userschema=mongoose.Schema({
         default:Date.now
     }
 
+})
+
+module.exports = mongoose.model('car', UserSchema)
