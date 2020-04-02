@@ -14,20 +14,20 @@ router.get('/', auth, (req, res) => {
 
 
 router.post('/', [auth, [
-    check('modele', 'Please enter your first name').not().isEmpty(),
-    check('energie', 'Please enter your last name').not().isEmpty(),
-    check('couleur', 'Please enter your last name').not().isEmpty(),
-    check('prix', 'Please enter your last name').not().isEmpty(),
+    check('modele', 'Please enter the model').not().isEmpty(),
+    check('energie', 'Please enter type of energy').not().isEmpty(),
+    check('téléphone', 'Please enter your number').not().isEmpty(),
+    check('prix', 'Please enter the price').not().isEmpty(),
 ]], (req, res) => {
     const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.json({ errors: errors.array() });
   }
-  const {modele, energie, couleur, prix} = req.body
+  const {modele, energie, téléphone, prix} = req.body
   const newCar = new Car ({        
                   modele,
                   energie,
-                  couleur,prix
+                  prix,téléphone
               })
 
               newCar.save()
@@ -54,12 +54,12 @@ router.delete('/:id', (req, res) => {
  
 
 router.put('/:id', (req, res) => {
-const { modele, energie, couleur, prix } = req.body
+const { modele, energie, téléphone, prix } = req.body
 
 let carUpdate = {}
 if(modele) carUpdate.modele = modele
 if(energie) carUpdate.energie = energie
-if (couleur) carUpdate.couleur = couleur
+if (téléphone) carUpdate.téléphone = téléphone
 if (prix) carUpdate.prix = prix
 
 Car.findById(req.params.id)

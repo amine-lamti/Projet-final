@@ -14,7 +14,7 @@ energie:{
     type: String,
     required: true
 },
-couleur:{
+téléphone:{
     type: String,
     required: true
 },
