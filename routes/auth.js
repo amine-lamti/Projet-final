@@ -31,10 +31,10 @@ router.post('/', [
   User.findOne({email})
       .then(user => {
           if(!user){
-              //check if user exists
+              
               return res.json({msg: "Please Register Before!"})             
           }else{
-              //compare Password
+     
               bcrypt.compare(password, user.password, (err, isMatch) => {
                   if(err){
                       console.log(err.message)
