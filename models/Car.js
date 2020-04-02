@@ -6,24 +6,20 @@ user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'users'
 },    
-firstname:{
+modele:{
     type: String,
     required: true
 },
-lastname:{
+energie:{
     type: String,
     required: true
 },
-email:{
+couleur:{
     type: String,
     required: true
 },
-password:{
+prix:{
     type: String,
-    required: true
-},
-phone:{
-    type: Number,
     required: true
 },
 date:{

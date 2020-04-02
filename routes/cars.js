@@ -5,26 +5,29 @@ const { check, validationResult } = require('express-validator')
 
 const Car = require('../models/Car')
 
-// Get car
+
 router.get('/', auth, (req, res) => {
     Car.find({user: req.user.id})
        .then(cars=> res.json(cars))
        .catch(err => console.log(err.message))
 })
 
-// Add car
+
 router.post('/', [auth, [
-    check('firstname', 'Please enter your first name').not().isEmpty(),
-    check('lastname', 'Please enter your last name').not().isEmpty(),
+    check('modele', 'Please enter your first name').not().isEmpty(),
+    check('energie', 'Please enter your last name').not().isEmpty(),
+    check('couleur', 'Please enter your last name').not().isEmpty(),
+    check('prix', 'Please enter your last name').not().isEmpty(),
 ]], (req, res) => {
     const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.json({ errors: errors.array() });
   }
-  const { firstname, lastname } = req.body
+  const {modele, energie, couleur, prix} = req.body
   const newCar = new Car ({        
-                  firstname,
-                  lastname
+                  modele,
+                  energie,
+                  couleur,prix
               })
 
               newCar.save()
@@ -32,14 +35,46 @@ router.post('/', [auth, [
                     .catch(err => console.log(err.message))
 })
 
-// Delete car
-router.delete('/:id', (req, res) => {
-    res.send('Delete car')
-})
 
-// Update car
+router.delete('/:id', (req, res) => {
+    Car.findById(req.params.id)
+    .then(car => {
+        if(!car){
+            return res.json({msg: 'Car not found!'})           
+        }else if(music.user.toString() !== req.user.id){
+            res.json({msg: 'Not authorized!'})
+        }else{
+         Car.findByIdAndDelete(req.params.id, {$set: carUpdate}, (err, data) => {
+             res.json({msg: "Car deleted!"})  
+        })
+    }
+ })
+         .catch(err => console.log(err.message))
+ })
+ 
+
 router.put('/:id', (req, res) => {
-    res.send('update car')
+const { modele, energie, couleur, prix } = req.body
+
+let carUpdate = {}
+if(modele) carUpdate.modele = modele
+if(energie) carUpdate.energie = energie
+if (couleur) carUpdate.couleur = couleur
+if (prix) carUpdate.prix = prix
+
+Car.findById(req.params.id)
+   .then(car => {
+       if(!car){
+           return res.json({msg: 'Car not found!'})           
+       }else if(music.user.toString() !== req.user.id){
+           res.json({msg: 'Not authorized!'})
+       }else{
+        Car.findByIdAndUpdate(req.params.id, {$set: carUpdate}, (err, data) => {
+            res.json({msg: "Car updated!"})  
+       })
+   }
+})
+        .catch(err => console.log(err.message))
 })
 
 module.exports = router
