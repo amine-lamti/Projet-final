@@ -19,6 +19,8 @@ mongoose.connect(db, { useNewUrlParser: true , useUnifiedTopology: true }, (err)
 app.use('/api/client', require('./routes/client'))
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/car', require('./routes/cars'))
+app.use('/api/agency', require('./routes/agency'))
+
 
 app.listen(8080, (err) => {
     if(err){
