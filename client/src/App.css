@@ -1,3 +1,26 @@
 .App {
     text-align: center;
 }
+
+.register {
+    width: 500px;
+    margin-left: 400px;
+    margin-top: 50px;
+}
+
+.login {
+    width: 500px;
+    margin-left: 400px;
+    margin-top: 50px;
+}
+
+.pop {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sign {
+    text-align: center;
+    color: #0069D9;
+    margin-bottom: 30px;
+}
