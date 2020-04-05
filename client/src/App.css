@@ -19,8 +19,23 @@
     justify-content: space-around;
 }
 
+.pop1 {
+    display: flex;
+    justify-content: space-between;
+}
+
 .sign {
     text-align: center;
     color: #0069D9;
     margin-bottom: 30px;
+}
+
+.google {
+    width: 400px;
+    margin-top: 200px;
+    margin-left: 40px;
+}
+
+.facebook {
+    display: flex;
 }

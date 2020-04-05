@@ -27,7 +27,7 @@ class Navbar extends Component {
                     <Link class="nav-link btn btn-primary text-white" type="button" to="/login" data-toggle="modal" data-target="#myModal">Se connecter</Link>                
                 </li>
                 <li class="nav-item">
-                    <Link class="nav-link btn btn-danger text-white" type="button" to="/register" data-toggle="modal" data-target="#myModal">S'inscrire</Link>
+                    <Link class="nav-link btn btn-danger text-white" type="button" to="" data-toggle="modal" data-target="#myModal">Se deconnecter</Link>
                 </li>
             </ul>
         </div>
@@ -38,4 +38,4 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+export default Navbar
