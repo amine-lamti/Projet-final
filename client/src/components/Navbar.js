@@ -1,17 +1,33 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { logout } from '../actions/AuthActions'
 
 
-class Navbar extends Component {
-  render() {
-    return (
-      <div>
-        	<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+const Navbar = props => {
+
+    const userConnected = () => (
+        <ul>
+        <li class="nav-item">
+           {props.auth.user && props.auth.user.firstname +''+ props.auth.user.lastname}
+        </li>
+        <li class="nav-item">
+            <a href="#" onClick={() => props.logout()}>
+                <i className="fas fa-sign-out-alt"></i>
+                Déconnexion
+            </a>
+        </li>
+        </ul>
+    )
+
+    const guest = () => (
+            <div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-warning">
         <a class="navbar-brand" href="#">LOCATION VOITURES</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+    
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto topnav">
                 <li class="nav-item active">
@@ -26,16 +42,24 @@ class Navbar extends Component {
                 <li class="nav-item">
                     <Link class="nav-link btn btn-primary text-white" type="button" to="/login" data-toggle="modal" data-target="#myModal">Se connecter</Link>                
                 </li>
-                <li class="nav-item">
-                    <Link class="nav-link btn btn-danger text-white" type="button" to="" data-toggle="modal" data-target="#myModal">Se deconnecter</Link>
-                </li>
             </ul>
         </div>
         </nav>
       </div>
-
-    );
+    )
+   
+   return (
+       <div class="navbar navbar-expand-lg navbar-light bg-warning">
+        {props.auth.isAuthenticated ? userConnected(): guest()} 
+      </div>
+   )
   }
+
+
+const mapStateToProps = state => {
+   return{
+       auth: state.auth
+   } 
 }
 
-export default Navbar
+export default connect(mapStateToProps, { logout })(Navbar)
