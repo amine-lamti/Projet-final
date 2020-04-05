@@ -22,7 +22,7 @@ router.post('/',[
     User.findOne({email})
     .then(user=>{ 
         if(user){
-            res.json({msg:'email already exist'})
+            res.json({msg:'Email already exist'})
         }
         else{
             user=new User({

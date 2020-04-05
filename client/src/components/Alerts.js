@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 const Alerts = props => {
     return (
-        props.alerts.length > 0 && props.alerts.maps(alert => (
+        props.alerts.length > 0 && props.alerts.map(alert => (
             <Alert key={alert.id} variant={alert.type}>
             {alert.msg}
           </Alert>

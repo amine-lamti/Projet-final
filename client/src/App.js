@@ -7,7 +7,12 @@ import Vehicule from './components/Vehicule';
 import Reservation from './components/Reservation';
 import Register from './components/Register';
 import Login from './components/Login';
-import Alerts from './components/Alerts'
+import Alerts from './components/Alerts';
+import setAuthToken from './utils/setAuthToken'
+
+if(localStorage.token){
+  setAuthToken(localStorage.token)
+}
 
 function App() {
   return (
@@ -15,7 +20,6 @@ function App() {
     <Navbar />
     <Alerts />
     <Switch>
-  
       <Route  exact path="/" component={Acceuil}/>
       <Route  path="/vehicule" component={Vehicule}/>
       <Route  path="/reservation" component={Reservation}/>
