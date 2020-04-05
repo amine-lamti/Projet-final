@@ -49,7 +49,7 @@ router.post('/', [
                           res.json({token})
                       })
                   }else{
-                      return res.json({msg: "Wrong Password"})
+                      return res.json({msg: "Wrong Password!"})
                   }
               })
           }
