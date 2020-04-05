@@ -61,6 +61,12 @@ export const login = formData => dispatch => {
 
 
 // Logout User
+export const logout = () => dispatch => {
+    dispatch({
+        type: LOGOUT     
+    })
+}
+
 // Clear Errors
 export const clearError = () => dispatch => {
     dispatch({
