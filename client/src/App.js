@@ -7,12 +7,15 @@ import Vehicule from './components/Vehicule';
 import Reservation from './components/Reservation';
 import Register from './components/Register';
 import Login from './components/Login';
+import Alerts from './components/Alerts'
 
 function App() {
   return (
     <BrowserRouter>
     <Navbar />
+    <Alerts />
     <Switch>
+  
       <Route  exact path="/" component={Acceuil}/>
       <Route  path="/vehicule" component={Vehicule}/>
       <Route  path="/reservation" component={Reservation}/>
