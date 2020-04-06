@@ -3,20 +3,32 @@ import { connect } from 'react-redux';
 import { loadUser } from '../actions/AuthActions'
 
 class Acceuil extends React.Component {
+
+    state = {
+        type: "client"
+    }
     componentDidMount() {
         this.props.loadUser()
     }
+
+    componentWillReceiveProps =(nextprops) => {
+       this.setState
+           ({type: nextprops.auth.user.type})
+ 
+}
     render(){
     return (
         <div>
-UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
-Lorem ipsum, dolor sit a
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus laudantium dignissimos, amet ducimus nam voluptatibus quos aut vel adipisci quod modi doloribus impedit neque fuga suscipit, reiciendis, sequi soluta nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus laudantium dignissimos, amet ducimus nam voluptatibus quos aut vel adipisci quod modi doloribus impedit neque fuga suscipit, reiciendis, sequi soluta nesciunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus laudantium dignissimos, amet ducimus nam voluptatibus quos aut vel adipisci quod modi doloribus impedit neque fuga suscipit, reiciendis, sequi soluta nesciunt?met consectetur adipisicing elit. Repellendus laudantium dignissimos, amet ducimus nam voluptatibus quos aut vel adipisci quod modi doloribus impedit neque fuga suscipit, reiciendis, sequi soluta nesciunt?
-
+   {this.state.type && this.state.type === "client" ? <h1>WELCOME CLIENT</h1> : <h1>WELCOME AGENCY</h1>}
         </div>
     )
   }
 }
 
+ const mapStateToProps = state => {
+    return{
+        auth: state.auth
+    } 
+}
 
-export default connect(null, { loadUser })(Acceuil)
+export default connect(mapStateToProps, { loadUser })(Acceuil)

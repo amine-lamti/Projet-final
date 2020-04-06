@@ -9,7 +9,8 @@ const UserSchema=mongoose.Schema({
     lastname:{
         type:String,
         required:true
-    },email:{
+    },
+    email:{
         type:String,
         required:true
     },
@@ -17,20 +18,13 @@ const UserSchema=mongoose.Schema({
         type:String,
         required:true
     },
-    loaction:{
-        type:String,
-        required:true
-    },
-    agencyname:{
-        type:String,
-        required:true
-    },type:{
-        type:String,
-        required:true
-    }
-   , Date:{
+    Date:{
         type:Date,
         default:Date.now
+    },
+    type:{
+        type:String,
+        required:true
     }
 
 })

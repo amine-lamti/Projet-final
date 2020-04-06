@@ -31,13 +31,14 @@ class Login extends Component {
             }, 5000);
         }
     }
-    loginNow = () => {
+    loginNow = (e) => {
+        e.preventDefault()
         if(this.state.email ==='' || this.state.password ===''){
             let id = uuidv4()
             this.props.setAlert('Please enter your credentials before!', 'danger', id)
             setTimeout(() => {
                 this.props.removeAlert(id)
-            }, 5000)
+            }, 5000);
         }else{
             this.props.login({
                 email: this.state.email,
