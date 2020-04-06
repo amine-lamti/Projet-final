@@ -41,7 +41,7 @@ router.delete('/:id', (req, res) => {
     .then(car => {
         if(!car){
             return res.json({msg: 'Car not found!'})           
-        }else if(music.user.toString() !== req.user.id){
+        }else if(car.user.toString() !== req.user.id){
             res.json({msg: 'Not authorized!'})
         }else{
          Car.findByIdAndDelete(req.params.id, {$set: carUpdate}, (err, data) => {
@@ -66,7 +66,7 @@ Car.findById(req.params.id)
    .then(car => {
        if(!car){
            return res.json({msg: 'Car not found!'})           
-       }else if(music.user.toString() !== req.user.id){
+       }else if(car.user.toString() !== req.user.id){
            res.json({msg: 'Not authorized!'})
        }else{
         Car.findByIdAndUpdate(req.params.id, {$set: carUpdate}, (err, data) => {

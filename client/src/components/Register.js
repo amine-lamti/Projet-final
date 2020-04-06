@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { setAlert, removeAlert } from '../actions/AlertActions';
-import { register, clearError } from '../actions/AuthActions'
+import { register } from '../actions/AuthActions';
+import { Link } from 'react-router-dom'
+
+
 
 
 class Register extends Component {
@@ -12,26 +15,29 @@ class Register extends Component {
             firstname: '',
             lastname: '',
             email: '',
-            password: ''
+            password: '',
+            type:''
         }
     }
     handleChange = e => {
         this.setState({[e.target.name]: e.target.value})
     }
     
-    registerNow = () => { 
-        if(this.state.firstname === '' || this.state.lastname ==='' || this.email ==='' || this.state.password ===''){
+    registerNow = (e) => {
+        e.preventDefault() 
+        if(this.state.firstname === '' || this.state.lastname ==='' || this.state.email ==='' || this.state.password ==='' || this.state.type ===''){
             let id = uuidv4()
             this.props.setAlert('All fields are required!', 'danger', id)
             setTimeout(() => {
-                this.props.clearAlert(id)
+                this.props.removeAlert(id)
             }, 5000);
         }else{ 
             this.props.register({
-            firstname: this.props.firstname,
-            lastname: this.props.lastname,
-            email: this.props.email,
-            password: this.props.password
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            email: this.state.email,
+            password: this.state.password,
+            type: this.state.type
         })
 
         }
@@ -56,12 +62,12 @@ class Register extends Component {
                 <h3 className="sign">Sign Up</h3>
                 <div className="pop">
                     <div>
-                        <input type="radio" class="form-check-input" name="optradio"/>
-                        <label>Agence</label>
+                        <input value="agence" id="Agence" type="radio" class="form-check-input" name="type" onClick={this.handleChange}/>
+                        <label htmlFor="Agence">Agence</label>
                     </div>
                     <div>
-                        <input type="radio" class="form-check-input" name="optradio"/>
-                        <label>Client</label>
+                        <input value="client" id="Client" type="radio" class="form-check-input" name="type" onClick={this.handleChange}/>
+                        <label htmlFor="Client">Client</label>
                         </div>
                  </div>
                 <div className="form-group">
@@ -84,19 +90,19 @@ class Register extends Component {
                     <input type="password" className="form-control" placeholder="Enter password" name="password" onChange={this.handleChange}/>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block" onClick={this.registerNow}>Sign Up</button>
+                <button className="btn btn-primary btn-block" onClick={this.registerNow}>Sign Up</button>
                 <p className="forgot-password text-right">
-                    Already registered <a href="#">sign in?</a>
+                    Already registered <Link to="/login">sign in?</Link>
                 </p>
             </form>
             </div>
         );
     }
 }
-const mapStateToProps = state => {
-    return{
+
+const mapStateToProps = state =>{
+    return {
         auth: state.auth
     }
 }
-
-export default connect(mapStateToProps, { setAlert, removeAlert, register, clearError })(Register)
+export default connect(mapStateToProps, { setAlert, removeAlert, register })(Register)
