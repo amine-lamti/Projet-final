@@ -9,3 +9,5 @@ export const USER_LOADED = "USER_LOADED"
 
 export const SET_ALERT = "SET_ALERT" 
 export const REMOVE_ALERT = "REMOVE_ALERT"
+export const GET_CLIENTCAR="GET_CLIENTCAR"
+export const GET_AGENCYCAR="GET_AGENCY"
