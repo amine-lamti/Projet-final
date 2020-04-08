@@ -1,5 +1,6 @@
 import { ADD_CAR, DELETE_CAR, UPDATE_CAR, SAVE_CAR, CLEAR_CAR } from './types'
 
+
 export const addCar = newCar => dispatch => {
     dispatch({
         type: ADD_CAR,
@@ -33,3 +34,4 @@ export const clearCar = () => {
         type: CLEAR_CAR
     }
 }
+
