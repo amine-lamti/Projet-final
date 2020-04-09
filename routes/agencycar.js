@@ -61,12 +61,12 @@ router.delete('/:id', (req, res) => {
  
 
 router.put('/:id', (req, res) => {
-const { modele, energie, phone, prix, couleur, image } = req.body
+const { modele, energie, téléphone, prix, couleur, image } = req.body
 
 let carUpdate = {}
 if(modele) carUpdate.modele = modele
 if(energie) carUpdate.energie = energie
-if (phone) carUpdate.phone = phone
+if (téléphone) carUpdate.téléphone = téléphone
 if (prix) carUpdate.prix = prix
 if (couleur) carUpdate.couleur = couleur
 if (image) carUpdate.image = image
