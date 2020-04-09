@@ -27,7 +27,7 @@ router.post('/', [auth, [
   const newCar = new Car ({        
                   modele,
                   energie,
-                  prix,téléphone
+                  prix,téléphone,user:req.user.id
               })
 
               newCar.save()
@@ -70,11 +70,23 @@ Car.findById(req.params.id)
            res.json({msg: 'Not authorized!'})
        }else{
         Car.findByIdAndUpdate(req.params.id, {$set: carUpdate}, (err, data) => {
+            if(err) throw err
             res.json({msg: "Car updated!"})  
        })
    }
 })
         .catch(err => console.log(err.message))
+})
+router.put("/api/:id",auth,(req,res)=>{
+    Car.findByIdAndUpdate(req.params.id,{$push:{reservation:{
+        user:req.user.id,
+        startdate:req.body.startdate,
+        enddate:req.body.enddate,
+
+    }}},(err,data)=>{
+        if(err) throw err
+        res.json({msg:"car is reserved"})
+    })
 })
 
 module.exports = router

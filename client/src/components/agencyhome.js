@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux"
 import {getagencycar} from "../actions/CarActions"
-class agencyhome extends Component {
+class Agencyhome extends Component {
    componentDidMount(){
        this.props.getagencycar()
    }
@@ -14,4 +14,4 @@ class agencyhome extends Component {
     }
 }
 
-export default  connect(mapStateToProps,{getagencycar})(agencyhome);
+export default  connect(null,{getagencycar})(Agencyhome);

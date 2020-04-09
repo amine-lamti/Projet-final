@@ -8,11 +8,11 @@ const CarSchema = mongoose.Schema({
     },
     name: {
         type: String,
-        required: true
+        required: false
     },
     image:{
         type:String,
-        required:true
+        required:false
     }
     ,
     modele: {
@@ -31,6 +31,11 @@ const CarSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    reservation:{
+        type:Array,
+        required:false
+    }
+    ,
     date: {
         type: Date,
         default: Date.now

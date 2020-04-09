@@ -2,10 +2,14 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../actions/AuthActions'
+import{clearcars} from '../actions/CarActions'
 
 
 const Navbar = props => {
-
+ const logmeout=()=>{
+    props.logout()
+    props.clearcars()
+}
     const userConnected = () => (
            <div>
            <nav class="navbar navbar-expand-lg navbar-light bg-warning">
@@ -25,7 +29,7 @@ const Navbar = props => {
                    <Link class="nav-link" to="/">Contact</Link>
                </li>
                <li class="nav-item">
-                   <Link class="nav-link btn btn-primary text-white" type="button" to="/login" data-toggle="modal" data-target="#myModal" onClick={props.logout}>Déconnexion</Link>                
+                   <Link class="nav-link btn btn-primary text-white" type="button" to="/login" data-toggle="modal" data-target="#myModal" onClick={logmeout}>Déconnexion</Link>                
                </li>
            </ul>
        </div>
@@ -77,4 +81,4 @@ const mapStateToProps = state => {
    } 
 }
 
-export default connect(mapStateToProps, { logout })(Navbar)
+export default connect(mapStateToProps, { logout ,clearcars})(Navbar)
