@@ -10,7 +10,7 @@ router.get('/', auth, (req, res) => {
     Car.find({user: req.user.id})
        .then(cars=> res.json(cars))
        .catch(err => console.log(err.message))
-})
+})  
 
 
 router.post('/', [auth, [
