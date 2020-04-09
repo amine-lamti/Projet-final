@@ -16,7 +16,7 @@ router.get('/', auth, (req, res) => {
 router.post('/', [auth, [
     check('modele', 'Please enter the model').not().isEmpty(),
     check('energie', 'Please enter type of energy').not().isEmpty(),
-    check('phone', 'Please enter your number').not().isEmpty(),
+    check('téléphone', 'Please enter your number').not().isEmpty(),
     check('prix', 'Please enter the price').not().isEmpty(),
     check('couleur', 'Please enter the color').not().isEmpty(),
     check('image', 'Please enter the image').not().isEmpty(),
@@ -25,14 +25,16 @@ router.post('/', [auth, [
   if (!errors.isEmpty()) {
     return res.json({ errors: errors.array() });
   }
-  const {modele, energie, phone, prix, couleur, image} = req.body
+  const {modele, energie, téléphone, prix, couleur, image} = req.body
   const newCar = new Car ({        
                   modele,
                   energie,
                   prix,
-                  phone,
                   couleur,
-                  image
+                  image,
+                  téléphone,
+                  user:req.user.id
+
               })
 
               newCar.save()
@@ -77,11 +79,23 @@ Car.findById(req.params.id)
            res.json({msg: 'Not authorized!'})
        }else{
         Car.findByIdAndUpdate(req.params.id, {$set: carUpdate}, (err, data) => {
+            if(err) throw err
             res.json({msg: "Car updated!"})  
        })
    }
 })
         .catch(err => console.log(err.message))
+})
+router.put("/api/:id",auth,(req,res)=>{
+    Car.findByIdAndUpdate(req.params.id,{$push:{reservation:{
+        user:req.user.id,
+        startdate:req.body.startdate,
+        enddate:req.body.enddate,
+
+    }}},(err,data)=>{
+        if(err) throw err
+        res.json({msg:"car is reserved"})
+    })
 })
 
 module.exports = router

@@ -11,7 +11,7 @@ class CarForm extends Component {
           modele:'',
           couleur:'',
           energie:'',
-          phone:'',
+          téléphone:'',
           image:''
         }
     }
@@ -49,7 +49,7 @@ class CarForm extends Component {
 
     <div>
     <label>phone: </label>
-    <input name="phone" type="text" onChange={this.handleChange} value={this.state.phone}/>
+    <input name="téléphone" type="text" onChange={this.handleChange} value={this.state.téléphone}/>
     </div>
 
     <div>
@@ -74,7 +74,7 @@ class CarForm extends Component {
           modele:'',
           couleur:'',
           energie:'',
-          phone:'',
+          téléphone:'',
           image:'',
           prix:''
 

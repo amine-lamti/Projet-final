@@ -1,35 +1,34 @@
-import { ADD_CAR, DELETE_CAR, UPDATE_CAR, SAVE_CAR, CLEAR_CAR } from './types'
+import{GET_CLIENTCAR,GET_AGENCYCAR,CLEAR_CURRENTCAR} from "./types"
+import axios from 'axios'
 
-export const addCar = newCar => dispatch => {
+export const getclientcar=()=>dispatch=>{
+    const config = {
+        headers: {
+            'Content-type': 'application/json'
+
+        }
+    }
+    axios.get("/api/clientcar",config)
+    .then((res)=>dispatch({
+        type:GET_CLIENTCAR,
+        payload:res.data
+    }))
+}
+export  const getagencycar=()=>dispatch=>{
+    const config = {
+        headers: {
+            'Content-type':'application/json'
+                }
+    }
+    axios.get("/api/agencycar",config)
+    .then((res)=>dispatch({
+        type:GET_AGENCYCAR,
+        payload:res.data
+    }))
+}
+export const clearcars=()=>dispatch=>{
     dispatch({
-        type: ADD_CAR,
-        payload: newCar
+        type:CLEAR_CURRENTCAR,
     })
 }
 
-export const deleteCar = id => {
-    return{
-        type: DELETE_CAR,
-        payload: id
-    }
-} 
-
-export const saveCar = car => {
-    return{
-        type: SAVE_CAR,
-        payload: car
-    }
-}
-
-export const editCar = updatedCar => {
-    return{
-        type: UPDATE_CAR,
-        payload: updatedCar 
-    }
-}
-
-export const clearCar = () => {
-    return{
-        type: CLEAR_CAR
-    }
-}

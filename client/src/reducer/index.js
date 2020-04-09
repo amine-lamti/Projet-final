@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux'
-import CarReducer from './CarReducer'
 import AuthReducer from './AuthReducer'
 import AlertReducer from './AlertReducer'
+import Clientcar from  "./clientCarReducer"
+import Agencyreducer from "./agencyinfo"
 
 
-export default combineReducers({car: CarReducer, auth: AuthReducer, alert: AlertReducer})
+export default combineReducers({ auth: AuthReducer, alert: AlertReducer,Clientcar,Agencyreducer})
