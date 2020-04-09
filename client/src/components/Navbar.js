@@ -43,6 +43,9 @@ class Navbar extends Component {
                    <Link class="nav-link" to="/">Agences</Link>
                </li>
                <li class="nav-item">
+                   <Link class="nav-link" to="/reservation">Réservation</Link>
+               </li>  
+               <li class="nav-item">
                    <Link class="nav-link btn btn-primary text-white" type="button" to="/" data-toggle="modal" data-target="#myModal" onClick={this.logmeout}><i class="fas fa-sign-out-alt"> Déconnexion</i></Link>                
                </li>
            </ul> : <ul class="navbar-nav ml-auto topnav">
@@ -81,14 +84,11 @@ class Navbar extends Component {
                     <Link class="nav-link" to="/">Acceuil<span class="sr-only">(current)</span></Link>
                 </li>
                 <li class="nav-item">
-                   <Link class="nav-link" to="/">Véhicules</Link>
+                   <Link class="nav-link" to="/vehicule">Véhicules</Link>
                </li>
                <li class="nav-item">
-                   <Link class="nav-link" to="/">Agences</Link>
-               </li>
-               <li class="nav-item">
-                   <Link class="nav-link" to="/reservation">Réservation</Link>
-               </li>              
+                   <Link class="nav-link" to="/reservation">Agences</Link>
+               </li>            
                 <li class="nav-item">
                     <Link class="nav-link btn btn-primary text-white" type="button" to="/login" data-toggle="modal" data-target="#myModal"><i class="fas fa-sign-in-alt"> Se connecter</i></Link>                  
                 </li>
