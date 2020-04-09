@@ -54,8 +54,8 @@ export const login = formData => dispatch => {
          dispatch(loadUser())
         })
          .catch(err => dispatch ({
-             type: LOGIN_FAIL,
-             payload: err.response.data.msg
+           type: LOGIN_FAIL,
+           payload: err.response.data.msg
          }))
 }
 

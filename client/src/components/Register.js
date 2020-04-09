@@ -92,7 +92,7 @@ class Register extends Component {
 
                 <button className="btn btn-primary btn-block" onClick={this.registerNow}>Sign Up</button>
                 <p className="forgot-password text-right">
-                    Already registered <Link to="/login">sign in?</Link>
+                    Already registered <Link to="/login">Sign In?</Link>
                 </p>
             </form>
             </div>
