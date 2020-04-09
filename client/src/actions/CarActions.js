@@ -31,3 +31,8 @@ export const clearcars=()=>dispatch=>{
         type:CLEAR_CURRENTCAR,
     })
 }
+export const clearcars=()=>dispatch=>{
+    dispatch({
+        type:CLEAR_CURRENTCAR,
+    })
+}
