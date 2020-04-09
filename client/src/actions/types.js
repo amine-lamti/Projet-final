@@ -18,4 +18,7 @@ export const SAVE_CAR = "SAVE_CAR"
 export const CLEAR_CAR = "CLEAR_CAR"
 
 
+export const GET_CLIENTCAR="GET_CLIENTCAR"
+export const GET_AGENCYCAR="GET_AGENCYCAR"
+export const CLEAR_CURRENTCAR="CLEAR_CURRENTCAR"
 

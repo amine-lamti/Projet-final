@@ -1,8 +1,8 @@
-import{GET_AGENCYCAR} from "./types"
+import{GET_AGENCYCAR,CLEAR_CURRENTCAR} from "../actions/types"
 
 const initialestate={
     cars:[],
-    resrevations:null
+    resrevations:[]
 }
 
 const Agencyreducer=(state=initialestate,action)=>{
@@ -11,6 +11,12 @@ const Agencyreducer=(state=initialestate,action)=>{
             return{...state,
             cars:action.payload
         }
+        case CLEAR_CURRENTCAR:
+            return{
+                ...state,
+                cars:[]
+            }
+       
         default:
             return state
     }

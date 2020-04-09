@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { loadUser } from '../actions/AuthActions'
-import CarForm from './CarForm';
-import CarList from './CarList'
+import Agencyhome from "./agencyhome"
+
 
 class Acceuil extends React.Component {
 
@@ -21,7 +21,9 @@ class Acceuil extends React.Component {
     render(){
     return (
         <div>
-   {this.state.type && this.state.type === "client" ? <h1>WELCOME CLIENT</h1> : <div><CarList/> <CarForm/></div>}
+<
+   {this.state.type && this.state.type === "client" ? <h1>WELCOME CLIENT</h1> : <Agencyhome/>}
+
         </div>
     )
   }
