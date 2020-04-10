@@ -18,16 +18,23 @@ router.post('/', [auth, [
     check('energie', 'Please enter type of energy').not().isEmpty(),
     check('téléphone', 'Please enter your number').not().isEmpty(),
     check('prix', 'Please enter the price').not().isEmpty(),
+    check('couleur', 'Please enter the color').not().isEmpty(),
+    check('image', 'Please enter the image').not().isEmpty(),
 ]], (req, res) => {
     const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.json({ errors: errors.array() });
   }
-  const {modele, energie, téléphone, prix} = req.body
+  const {modele, energie, téléphone, prix, couleur, image} = req.body
   const newCar = new Car ({        
                   modele,
                   energie,
-                  prix,téléphone,user:req.user.id
+                  prix,
+                  couleur,
+                  image,
+                  téléphone,
+                  user:req.user.id
+
               })
 
               newCar.save()
@@ -54,13 +61,15 @@ router.delete('/:id', (req, res) => {
  
 
 router.put('/:id', (req, res) => {
-const { modele, energie, téléphone, prix } = req.body
+const { modele, energie, téléphone, prix, couleur, image } = req.body
 
 let carUpdate = {}
 if(modele) carUpdate.modele = modele
 if(energie) carUpdate.energie = energie
 if (téléphone) carUpdate.téléphone = téléphone
 if (prix) carUpdate.prix = prix
+if (couleur) carUpdate.couleur = couleur
+if (image) carUpdate.image = image
 
 Car.findById(req.params.id)
    .then(car => {
