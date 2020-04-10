@@ -12,3 +12,6 @@ export const REMOVE_ALERT = "REMOVE_ALERT"
 export const GET_CLIENTCAR="GET_CLIENTCAR"
 export const GET_AGENCYCAR="GET_AGENCYCAR"
 export const CLEAR_CURRENTCAR="CLEAR_CURRENTCAR"
+export const ADD_CAR="ADD_CAR"
+export const CAR_ERR="CAR_ERR"
+
