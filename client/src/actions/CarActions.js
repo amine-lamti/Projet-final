@@ -1,4 +1,4 @@
-import{GET_CLIENTCAR,GET_AGENCYCAR,CLEAR_CURRENTCAR} from "./types"
+import{GET_CLIENTCAR,GET_AGENCYCAR,CLEAR_CURRENTCAR,ADD_CAR,CAR_ERR} from "./types"
 import axios from 'axios'
 
 export const getclientcar=()=>dispatch=>{
@@ -31,4 +31,3 @@ export const clearcars=()=>dispatch=>{
         type:CLEAR_CURRENTCAR,
     })
 }
-
