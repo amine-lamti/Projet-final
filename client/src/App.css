@@ -36,6 +36,6 @@
     margin-left: 40px;
 }
 
-.facebook {
-    display: flex;
+.img {
+    width: 800px !important;
 }

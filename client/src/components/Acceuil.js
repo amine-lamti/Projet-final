@@ -1,9 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { loadUser } from "../actions/AuthActions";
-import Agencyhome from "./agencyhome";
-import Clienthome from "./clienthome";
-import Footer from "./Footer"
+import CarouselPage from "./CarouselPage"
+
 
 
 
@@ -28,18 +27,12 @@ class Acceuil extends React.Component {
   render() {
     return (
       <div>
-      <div>
-        {this.props.auth.user && this.props.auth.user.type === "client" ? (
-          <Clienthome />
-        ) : (
-          <Agencyhome />
-        )}
+		<CarouselPage />
       </div>
-       <Footer /> 
-      </div>
-    )
-  }
+		)
+	}
 }
+
 
 const mapStateToProps = (state) => {
   return {
