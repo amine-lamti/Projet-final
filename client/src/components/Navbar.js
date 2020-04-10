@@ -1,43 +1,77 @@
-import React from "react";
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { logout } from '../actions/AuthActions'
+import { logout, loadUser } from '../actions/AuthActions'
 import{clearcars} from '../actions/CarActions'
 
 
-const Navbar = props => {
- const logmeout=()=>{
-    props.logout()
-    props.clearcars()
+class Navbar extends Component {
+
+    
+   componentDidMount() {
+        if (this.props.auth.isAuthenticated) {
+          this.props.loadUser();
+        }
+      }
+
+
+  logmeout=()=>{
+    this.props.logout()
+    this.props.clearcars()
 }
-    const userConnected = () => (
+
+
+
+  userConnected = () => (
            <div>
            <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-       <a class="navbar-brand" href="#">{props.auth.user && props.auth.user.firstname +' '+ props.auth.user.lastname}</a>
+       <a class="navbar-brand" href="#">
+       <i class="fas fa-user"> {this.props.auth.user && this.props.auth.user.firstname +' '+ this.props.auth.user.lastname}</i>      
+           </a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
            <span class="navbar-toggler-icon"></span>
        </button> 
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-           <ul class="navbar-nav ml-auto topnav">
+           {this.props.auth.user && this.props.auth.user.type === "client" ? <ul class="navbar-nav ml-auto topnav">
                <li class="nav-item active">
                    <Link class="nav-link" to="/">Acceuil<span class="sr-only">(current)</span></Link>
                </li>
                <li class="nav-item">
-                   <Link class="nav-link" to="/">A propos</Link>
+                   <Link class="nav-link" to="/">Véhicules</Link>
                </li>
                <li class="nav-item">
-                   <Link class="nav-link" to="/">Contact</Link>
+                   <Link class="nav-link" to="/">Agences</Link>
                </li>
                <li class="nav-item">
-                   <Link class="nav-link btn btn-primary text-white" type="button" to="/login" data-toggle="modal" data-target="#myModal" onClick={logmeout}>Déconnexion</Link>                
+                   <Link class="nav-link" to="/reservation">Réservation</Link>
+               </li>  
+               <li class="nav-item">
+                   <Link class="nav-link btn btn-primary text-white" type="button" to="/" data-toggle="modal" data-target="#myModal" onClick={this.logmeout}><i class="fas fa-sign-out-alt"> Déconnexion</i></Link>                
                </li>
-           </ul>
+           </ul> : <ul class="navbar-nav ml-auto topnav">
+               <li class="nav-item active">
+                   <Link class="nav-link" to="/">Acceuil<span class="sr-only">(current)</span></Link>
+               </li>
+               <li class="nav-item">
+                   <Link class="nav-link" to="/">Mes véhicules</Link>
+               </li>
+               <li class="nav-item">
+                   <Link class="nav-link" to="/">Mes agences</Link>
+               </li>
+               <li class="nav-item">
+                   <Link class="nav-link" to="/">Mes Commandes</Link>
+               </li>
+               <li class="nav-item">
+                   <Link class="nav-link btn btn-primary text-white" type="button" to="/" data-toggle="modal" data-target="#myModal" onClick={this.logmeout}><i class="fas fa-sign-out-alt"> Déconnexion</i></Link>                
+               </li>
+           </ul>}
+           
        </div>
        </nav>
      </div>
     )
 
-    const guest = () => (
+     guest = () => (
         <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-warning">
         <a class="navbar-brand" href="#">CAR DEALER</a>
@@ -47,19 +81,19 @@ const Navbar = props => {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto topnav">
                 <li class="nav-item active">
-                    <Link class="nav-link" href="#">Home <span class="sr-only">(current)</span></Link>
+                    <Link class="nav-link" to="/">Acceuil<span class="sr-only">(current)</span></Link>
                 </li>
                 <li class="nav-item">
-                    <Link class="nav-link" href="#">About</Link>
+                   <Link class="nav-link" to="/vehicule">Véhicules</Link>
+               </li>
+               <li class="nav-item">
+                   <Link class="nav-link" to="/reservation">Agences</Link>
+               </li>            
+                <li class="nav-item">
+                    <Link class="nav-link btn btn-primary text-white" type="button" to="/login" data-toggle="modal" data-target="#myModal"><i class="fas fa-sign-in-alt"> Se connecter</i></Link>                  
                 </li>
                 <li class="nav-item">
-                    <Link class="nav-link" href="#">Contact</Link>
-                </li>
-                <li class="nav-item">
-                    <Link class="nav-link btn btn-primary text-white" type="button" to="/login" data-toggle="modal" data-target="#myModal">Sign In</Link>                  
-                </li>
-                <li class="nav-item">
-                    <Link class="nav-link btn btn-danger text-white" type="button" to="/register" data-toggle="modal" data-target="#myModal">Register</Link>
+                    <Link class="nav-link btn btn-danger text-white" type="button" to="/register" data-toggle="modal" data-target="#myModal"><i class="fas fa-user-plus"> S'inscrire</i></Link>
                 </li>
             </ul>
         </div>
@@ -67,13 +101,14 @@ const Navbar = props => {
          </div>
     )
    
+    render() {
    return (
        <div>
-        {props.auth.isAuthenticated ? userConnected(): guest()} 
+        {this.props.auth.isAuthenticated ? this.userConnected(): this.guest()} 
       </div>
-   )
+   );
   }
-
+}
 
 const mapStateToProps = state => {
    return{
@@ -81,4 +116,4 @@ const mapStateToProps = state => {
    } 
 }
 
-export default connect(mapStateToProps, { logout ,clearcars})(Navbar)
+export default connect(mapStateToProps, { logout ,clearcars, loadUser })(Navbar)

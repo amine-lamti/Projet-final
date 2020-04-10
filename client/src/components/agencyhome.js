@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux"
 import {getagencycar} from "../actions/CarActions"
+
+
 class Agencyhome extends Component {
    componentDidMount(){
        this.props.getagencycar()
@@ -8,7 +10,7 @@ class Agencyhome extends Component {
     render() {
         return (
             <div>
-                
+               jhlggggggggggggggggggggg 
             </div>
         );
     }

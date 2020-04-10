@@ -31,19 +31,3 @@ export const clearcars=()=>dispatch=>{
         type:CLEAR_CURRENTCAR,
     })
 }
-export const addcar =(newcar)=>dispatch=>{
-    const config = {
-        headers: {
-            'Content-type':'application/json'
-                }
-    }
-    axios.post("/api/agencycar",newcar,config)
-    .then((res)=>dispatch({
-        type:ADD_CAR,
-        payload:res.data
-    })) 
-    .catch(err=>dispatch({
-        type:CAR_ERR,
-        payload:err.response.msg
-    }))
-}
