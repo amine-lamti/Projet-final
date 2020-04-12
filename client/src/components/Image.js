@@ -5,7 +5,10 @@ class Image extends Component {
     render() {
         return (
             <div>
-                <h1>RÉSERVEZ OU DÉPOSER VOTRE VOITURES EN LOCATION EN TUNISIE</h1>
+              <div className="txt">
+                <h1>Effectuez votre réservation ou déposer votre annonce en quelques clics !</h1>
+                <p>C'est un site web, qui regroupe touts les agences de location véhicules dans une région. Ce site porte toutes les informations des agences (Adresses, Téléphones, email, site web . . .) et il permet de faire une réservation des véhicules en ligne</p>
+              </div>
                 <CardDeck>
   <Card>
     <Card.Img variant="top" src="https://cdn2.webmanagercenter.com/wmc/wp-content/uploads/2019/06/federation-location-voitures.jpg" />
@@ -26,7 +29,7 @@ class Image extends Component {
       <Card.Title>Vous êtes une agence de location de véhicules</Card.Title>
       <Card.Text>
         This card has supporting text below as a natural lead-in to additional
-        content.{' '}
+        content.
       </Card.Text>
     </Card.Body>
     <Card.Footer>
