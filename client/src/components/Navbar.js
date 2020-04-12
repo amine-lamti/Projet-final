@@ -24,7 +24,7 @@ class Navbar extends Component {
 
   userConnected = () => (
            <div>
-           <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
        <a class="navbar-brand" href="#">
        <i class="fas fa-user"> {this.props.auth.user && this.props.auth.user.firstname +' '+ this.props.auth.user.lastname}</i>      
            </a>
@@ -65,15 +65,14 @@ class Navbar extends Component {
                    <Link class="nav-link btn btn-primary text-white" type="button" to="/" data-toggle="modal" data-target="#myModal" onClick={this.logmeout}><i class="fas fa-sign-out-alt"> Déconnexion</i></Link>                
                </li>
            </ul>}
-           
-       </div>
+          </div> 
        </nav>
      </div>
     )
 
      guest = () => (
         <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
         <a class="navbar-brand" href="#">CAR DEALER</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
