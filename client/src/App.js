@@ -10,6 +10,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import Alerts from './components/Alerts';
 import setAuthToken from './utils/setAuthToken';
+
 //import PrivateRoute from './components/PrivateRoute'
 
 if(localStorage.token){
