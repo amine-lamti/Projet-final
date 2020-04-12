@@ -19,6 +19,7 @@ if(localStorage.token){
 
 function App() {
   return (
+    <div className="App App-header">
     <BrowserRouter>
     <Navbar />
     <Alerts />
@@ -32,6 +33,7 @@ function App() {
 
     </Switch>
     </BrowserRouter>
+    </div>
      
   );
 }

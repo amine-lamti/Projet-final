@@ -4,6 +4,13 @@ import { loadUser } from "../actions/AuthActions";
 import Clienthome from "./clienthome";
 import Footer from "./Footer"
 
+import CarouselPage from "./CarouselPage";
+import Image from "./Image"
+import SocialPage from "./Avis"
+
+
+
+
 class Acceuil extends React.Component {
 
   componentWillMount() {
@@ -27,7 +34,15 @@ class Acceuil extends React.Component {
       </div>
     )
   }
+
+		<CarouselPage />
+    <Image />
+ <SocialPage />
+      </div>
+		)
+	}
 }
+
 
 const mapStateToProps = (state) => {
   return {
