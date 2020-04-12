@@ -4,56 +4,36 @@ import React, { Component } from 'react'
 class Footer extends Component {
     render() {
         return (
-            <div> 
-
-
+              <div>
 <footer className="footer">
+<p class="footer-copyright text-center py-3">© 2020 Copyright Tout les droits sont reservés.</p>
+<div class="container">
 
- 
-  <div class="container">
+<ul class="list-unstyled list-inline text-center">
+  <li class="list-inline-item">
+  <a class="btn-floating btn-lg btn-fb col1" type="button" role="button" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+  </li>
 
+  <li class="list-inline-item">
+  <a class="btn-floating btn-lg btn-tw col2" type="button" role="button" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+  </li>
 
-    <ul class="list-unstyled list-inline text-center">
-      <li class="list-inline-item">
-        <a class="btn-floating btn-fb mx-1">
-          <i class="fab fa-facebook-f"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-tw mx-1">
-          <i class="fab fa-twitter"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-gplus mx-1">
-          <i class="fab fa-google-plus-g"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-li mx-1">
-          <i class="fab fa-linkedin-in"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-dribbble mx-1">
-          <i class="fab fa-dribbble"> </i>
-        </a>
-      </li>
-    </ul>
-   
+  <li class="list-inline-item">
+  <a class="btn-floating btn-lg btn-li col4" type="button" role="button" href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a> 
+  </li>
 
-  </div>
- 
+  <li class="list-inline-item">
+  <a class="btn-floating btn-lg btn-ins col5" type="button" role="button" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+  </li>
 
-
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-  </div>
-
-
+  <li class="list-inline-item">
+  <a class="btn-floating btn-lg btn-whatsapp col3" type="button" role="button" href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+  </li>
+</ul>
+</div>
 </footer>
-
             </div>
+            
         );
     }
 }
