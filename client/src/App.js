@@ -10,6 +10,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import Alerts from './components/Alerts';
 import setAuthToken from './utils/setAuthToken';
+import CarItem from './components/CarItem'
 //import PrivateRoute from './components/PrivateRoute'
 
 if(localStorage.token){
@@ -27,6 +28,8 @@ function App() {
       <Route  path="/reservation" component={Reservation}/>
       <Route  path="/register" component={Register}/>
       <Route  path="/login" component={Login}/>
+      <Route  path="/caritem/:id" component={CarItem}/>
+
     </Switch>
     </BrowserRouter>
      
