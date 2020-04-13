@@ -4,7 +4,7 @@ import { getclientcar } from "../actions/CarActions"
 import { Link } from "react-router-dom"
 
 
-class Clienthome extends Component {
+class Clientcar extends Component {
 
 
     componentDidMount() {
@@ -30,4 +30,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { getclientcar })(Clienthome);
+export default connect(mapStateToProps, { getclientcar })(Clientcar);
