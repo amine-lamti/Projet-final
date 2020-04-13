@@ -35,7 +35,7 @@ class Image extends Component {
     </Card.Footer>
   </Card>
   <Card>
-    <Card.Img variant="top" src="https://lh3.googleusercontent.com/proxy/j8NLziuV0cWdQPT_zoekvuKPVH-TAbDoT_hEIjf0ES1cANKvY_e5WweKqupbE5OgdJUpbZ3oTd3CY8pV_wUIR2csVZ2NjfuFHoMYHh5TQL5Tm-tAGpQUt0saTfxL" />
+    <Card.Img variant="top" src="https://www.paris-taxi.eu/uploads/book/Alt_Paris-taxi.eu_voiture%20de%20location%20mariage_image2.jpg" className="bob"/>
     <Card.Body>
       <Card.Title>Vous cherchez un véhicule de luxe ou de mariage</Card.Title>
       <Card.Text>
