@@ -13,6 +13,7 @@ import CarItem from './components/CarItem'
 import Mesvehicule from './components/Mesvehicule'
 import CarForm from './components/CarForm'
 import Clientcar from './components/Clientcar'
+
 //import PrivateRoute from './components/PrivateRoute'
 
 if(localStorage.token){
@@ -21,7 +22,7 @@ if(localStorage.token){
 
 function App() {
   return (
-    <div className="App App-header">
+    <div className="App">
     <BrowserRouter>
     <Navbar />
     <Alerts />
