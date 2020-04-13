@@ -44,7 +44,7 @@ export const addcar =(newcar)=>dispatch=>{
     })) 
     .catch(err=>dispatch({
         type:CAR_ERR,
-        payload:err.response.msg
+        payload:err.msg
     }))
 }
 export const editcar=(updatedcar)=>dispatch=>{
@@ -54,7 +54,7 @@ export const editcar=(updatedcar)=>dispatch=>{
                 }
     }
     axios.put(`/api/agencycar/${updatedcar._id}`,updatedcar,config)
-     .then((res)=>dispatch({
+     .then((updatedcar)=>dispatch({
          type:UPDATE_CAR,
          payload:updatedcar
      }))
@@ -81,7 +81,8 @@ export const deletecar=(id)=>dispatch=>{
 }
 export const saved=(cartoupdate)=>dispatch =>{
         dispatch({
-            type:SAVED_CAR
+            type:SAVED_CAR,
+            payload:cartoupdate
         })
 
 }

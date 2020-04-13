@@ -38,6 +38,9 @@
     color: #0069D9;
     margin-bottom: 30px;
 }
+.card{
+    margin-top: 200px;
+}
 
 .google {
     width: 400px;
@@ -64,4 +67,7 @@
     background-color: #0C0D05;
     text-align: center;
     color: white;
+}
+.div{
+margin-top: 150px;
 }

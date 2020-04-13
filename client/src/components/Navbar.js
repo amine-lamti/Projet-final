@@ -37,7 +37,7 @@ class Navbar extends Component {
                    <Link class="nav-link" to="/">Acceuil<span class="sr-only">(current)</span></Link>
                </li>
                <li class="nav-item">
-                   <Link class="nav-link" to="/">Véhicules</Link>
+                   <Link class="nav-link" to="/cars">Véhicules</Link>
                </li>
                <li class="nav-item">
                    <Link class="nav-link" to="/">Agences</Link>
@@ -53,7 +53,7 @@ class Navbar extends Component {
                    <Link class="nav-link" to="/">Acceuil<span class="sr-only">(current)</span></Link>
                </li>
                <li class="nav-item">
-                   <Link class="nav-link" to="/">Mes véhicules</Link>
+                   <Link class="nav-link" to="/vehicule">Mes véhicules</Link>
                </li>
                <li class="nav-item">
                    <Link class="nav-link" to="/">Mes agences</Link>
@@ -83,7 +83,7 @@ class Navbar extends Component {
                     <Link class="nav-link" to="/">Acceuil<span class="sr-only">(current)</span></Link>
                 </li>
                 <li class="nav-item">
-                   <Link class="nav-link" to="/vehicule">Véhicules</Link>
+                   <Link class="nav-link" to="/cars">Véhicules</Link>
                </li>
                <li class="nav-item">
                    <Link class="nav-link" to="/reservation">Agences</Link>

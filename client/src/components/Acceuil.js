@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { loadUser } from "../actions/AuthActions";
-import Clienthome from "./clienthome";
+import { loadUser} from "../actions/AuthActions";
 import Footer from "./Footer"
 import CarouselPage from "./CarouselPage";
 import Image from "./Image"
@@ -28,13 +27,13 @@ class Acceuil extends React.Component {
   render() {
     return (
       <div>
-        <Clienthome />
-        <Footer />
     
   
 		<CarouselPage />
     <Image />
  <SocialPage />
+ <Footer />
+
       </div>
 		)
 	}}

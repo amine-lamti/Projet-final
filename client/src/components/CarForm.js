@@ -13,20 +13,32 @@ class CarForm extends Component {
             energie: '',
             téléphone: '',
             image: '',
+            prix:"",
         }
     }
 
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value })
     }
+componentDidMount(){
+    if(this.props.save){
+        this.setState({
+            modele:this.props.save.modele,
+            couleur: this.props.save.couleur,
+            energie: this.props.save.energie,
+            téléphone: this.props.save.téléphone,
+            image: this.props.save.image,
+            prix: this.props.save.prix,
 
-    componentWillReceiveProps(nextProps) {
-        this.setState(nextProps.save)
+
+
+        })
     }
+}    
 
     render() {
         return (
-            <div>
+            <div className="div">
                 <div>
                     <form>
                         <div>
@@ -41,14 +53,12 @@ class CarForm extends Component {
 
                         <div>
                             <label>energie: </label>
-                            <select name="energie" onChange={this.handleChange} value={this.state.energie}>
-                                <option>ffff</option>
-                                <option>gggg</option>
-                            </select>
+                            <input name="energie" type="text" onChange={this.handleChange} value={this.state.energie} />
+
                         </div>
 
                         <div>
-                            <label>phone: </label>
+                            <label>téléphone: </label>
                             <input name="téléphone" type="text" onChange={this.handleChange} value={this.state.téléphone} />
                         </div>
 
@@ -65,9 +75,17 @@ class CarForm extends Component {
                     <button onClick={e => {
                         e.preventDefault()
                         if (this.props.save) {
-                            this.props.editcar(this.state)
+                            this.props.editcar({car:this.state,_id:this.props.save._id})
                             this.props.clearsave()
-                            }
+                            this.setState({
+                                modele: '',
+                                couleur: '',
+                                energie: '',
+                                téléphone: '',
+                                image: '',
+                                prix: ''
+
+                            })}
                         else {
                             this.props.addcar(this.state)
 
@@ -93,7 +111,7 @@ class CarForm extends Component {
 
 const mapStateToProps = state => {
     return {
-        save: state.car.saved
+        save: state.Agencyreducer.saved
     }
 }
 
