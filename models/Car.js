@@ -6,10 +6,11 @@ const CarSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'users'
     },
-    name: {
-        type: String,
-        required: true
+    couleur:{
+        type:String,
+        required:true
     },
+    
     image:{
         type:String,
         required:true

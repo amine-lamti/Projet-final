@@ -22,13 +22,9 @@ const Agencyreducer = (state = initialestate, action) => {
         case CLEAR_CURRENTCAR:
             return {
                 ...state,
-                cars: []
+                cars: [...state.cars,action.payload]
             }
-        case ADD_CAR:
-            return {
-                ...state,
-                cars: [...state.music, action.payload]
-            }
+        
         case CAR_ERR:
             return {
                 ...state,
@@ -37,17 +33,17 @@ const Agencyreducer = (state = initialestate, action) => {
         case SAVED_CAR:
             return {
                 ...state,
-                seved: action.payload
+                saved: action.payload.cars
             }
         case DELETE_CAR:
             return {
                 ...state,
-                car: state.car.filter(el => el._id !== action.payload)
+                cars: state.cars.filter(el => el._id !== action.payload)
             }
         case UPDATE_CAR:
             return {
                 ...state,
-                car: state.car.map(el => el._id === action.payload._id ? action.payload : el)
+                cars: state.cars.map(el => el._id === action.payload.id ? action.payload.car : el)
             }
             case CLEARSAVED_CAR:
                 return{

@@ -1,9 +1,16 @@
 import {GET_CLIENTCAR} from "../actions/types"
+const initialestate = {
+    cars:[],
+    
 
-const Clientcar =(state=[],action)=>{
+
+
+}
+const Clientcar =(state=initialestate,action)=>{
     switch(action.type){
         case GET_CLIENTCAR:
-            return [action.payload,...state]
+            return {...state,
+                cars:action.payload}
         default:
             return state
     }
