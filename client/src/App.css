@@ -139,3 +139,8 @@
     position: relative;
     top: 1px;
 }
+
+.item {
+    padding-bottom: 10px;
+    padding-left: 70px;
+}
