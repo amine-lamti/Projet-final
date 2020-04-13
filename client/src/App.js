@@ -20,7 +20,7 @@ if(localStorage.token){
 
 function App() {
   return (
-    <div className="App App-header">
+    <div className="App">
     <BrowserRouter>
     <Navbar />
     <Alerts />

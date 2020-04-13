@@ -45,6 +45,10 @@
     margin-left: 40px;
 }
 
+.bob {
+    height: 250px;
+}
+
 .img {
     width: 800px !important;
 }
@@ -75,7 +79,7 @@
 }
 
 .col3 {
-    color: #25D366
+    color: #DD4B39
 }
 
 .col4 {
@@ -143,4 +147,8 @@
 .item {
     padding-bottom: 10px;
     padding-left: 70px;
+}
+
+.conseil {
+    padding: 50px;
 }
