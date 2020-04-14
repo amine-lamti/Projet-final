@@ -1,9 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { loadUser} from "../actions/AuthActions";
-import Footer from "./Footer"
 
-import { loadUser } from "../actions/AuthActions";
 
 import CarouselPage from "./CarouselPage";
 import Image from "./Image";
@@ -34,11 +32,6 @@ class Acceuil extends React.Component {
       <div>
     
   
-
-		<CarouselPage />
-    <Image />
- <SocialPage />
- <Footer />
 
  <CarouselPage />
  <Image />

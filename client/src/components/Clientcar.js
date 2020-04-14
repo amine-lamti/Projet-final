@@ -26,7 +26,7 @@ class Clientcar extends Component {
 }
 const mapStateToProps = state => {
     return {
-        car: state.Clientcar
+        car: state.Clientcar.cars
     }
 }
 
