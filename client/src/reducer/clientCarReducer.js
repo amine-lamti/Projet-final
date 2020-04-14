@@ -1,4 +1,4 @@
-import {GET_CLIENTCAR} from "../actions/types"
+import {GET_CLIENTCAR ,UPDATE_CAR,CLEAR_CURRENTCAR} from "../actions/types"
 const initialestate = {
     cars:[],
     
@@ -10,7 +10,12 @@ const Clientcar =(state=initialestate,action)=>{
     switch(action.type){
         case GET_CLIENTCAR:
             return {...state,
-                cars:action.payload}
+                cars:action.payload}  
+                    case CLEAR_CURRENTCAR:
+                        return {
+                            ...state,
+                            cars:[]
+                        }
         default:
             return state
     }

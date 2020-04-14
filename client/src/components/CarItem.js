@@ -11,22 +11,22 @@ class CarItem extends Component {
     super(props)
     this.state = {
       type: "client",
-      cars:{}
+      cars:{},
   
     };
   }
- 
-   componentDidMount(){
-    this.setState({cars:this.props.car.filter(el => el._id=== this.props.match.params.id)[0]})
+  componentWillMount(){
+    //this.setState({cars:this.props.car.filter(el => el._id== this.props.match.params.id)[0]})
     this.props.getclientcar()
+
     if (this.props.auth.isAuthenticated) {
       this.props.loadUser()
   }
 }
-  componentWillReceiveProps = (nextprops) => {
+  componentWillReceiveProps(nextprops){
     console.log(this.props.auth.isAuthenticated)
     if (this.props.auth.isAuthenticated) {
-      this.setState({ type: nextprops.auth.user.type });
+      this.setState({ type: nextprops.auth.user.type, cars: nextprops.car.filter(el => el._id== this.props.match.params.id)[0]});
     }
   }
   client = () => (<button>réserver</button>)
@@ -34,8 +34,8 @@ class CarItem extends Component {
 
 
   agence = () => (<div>
-    <button onClick={() => this.props.saved(this.state)}><Link to="/carform">Edit</Link> </button>
-    <button onClick={() => this.props.deletecar(this.state.id)}>DELETE</button></div>)
+    <button onClick={() => this.props.saved(this.state)}><Link to={`/carform/${this.state.cars._id}`}>EDIT </Link> </button>
+    <button onClick={() => this.props.deletecar(this.state.cars._id)}>DELETE</button></div>)
 
 
   render() {
@@ -44,14 +44,14 @@ class CarItem extends Component {
 
         <div className="infos">
           { 
-          this.state.cars && <div><img src={this.state.cars.image} />
+          this.state.cars ? <div><img src={this.state.cars.image} />
           <h1>{this.state.cars.modele}</h1>
           <h1>{this.state.cars.energie}</h1>
           <h1>{this.state.cars.couleur}</h1>
           <h1>{this.state.cars.téléphone}</h1>
           <h1>{this.state.cars.prix}</h1>
           {this.state.type === "client" ? this.client() : this.agence()} 
-          </div>}
+          </div> : "...Loading"}
         </div>
        
 

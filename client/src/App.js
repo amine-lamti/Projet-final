@@ -32,7 +32,7 @@ function App() {
       <Route  path="/register" component={Register}/>
       <Route  path="/login" component={Login}/>
       <Route  path="/caritem/:id" component={CarItem}/>
-      <Route  path="/carform" component={CarForm}/>
+      <Route  path="/carform/:id" component={CarForm}/>
       <Route  path="/cars" component={Clientcar}/>
       <Route  path="/vehicule" component={Mesvehicule}/>
 
