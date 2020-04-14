@@ -83,7 +83,6 @@ class Navbar extends Component {
                     <Link class="nav-link" to="/">Acceuil<span class="sr-only">(current)</span></Link>
                 </li>
                 <li class="nav-item">
-                   <Link class="nav-link" to="/cars">Véhicules</Link>
                    <Link class="nav-link" to="/vehicule">Conseils</Link>
                </li>
                <li class="nav-item">
