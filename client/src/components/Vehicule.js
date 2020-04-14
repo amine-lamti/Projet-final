@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Vehicule = () => {
+class Vehicule extends Component {
+  render() {
     return (
-        <div>
-hhhhhhhhhhhhhhhhhhhhhhhhhh
-        </div>
-    )
+      <div>
+        bbbbbbbbbbbbbbbbbbbbbbb
+      </div>
+    );
+  }
 }
 
-
-export default Vehicule
+export default Vehicule;
