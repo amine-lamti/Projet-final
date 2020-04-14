@@ -27,7 +27,7 @@ class Footer extends Component {
   </li>
 
   <li class="list-inline-item">
-  <a class="btn-floating btn-lg btn-gplus col3" type="button" role="button" href="https://myaccount.google.com/profile"><i class="fab fa-google-plus-g"></i></a>
+  <a class="btn-floating btn-lg btn-yt col3" type="button" role="button" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
   </li>
 </ul>
 </div>
