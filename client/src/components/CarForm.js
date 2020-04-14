@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addcar,editcar,clearsave} from '../actions/CarActions'
-import { v4 as uuidv4 } from 'uuid';
+import { addcar,editcar,clearsave,getagencycar} from '../actions/CarActions'
 
 
 class CarForm extends Component {
@@ -20,21 +19,15 @@ class CarForm extends Component {
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value })
     }
-componentDidMount(){
-    if(this.props.save){
-        this.setState({
-            modele:this.props.save.modele,
-            couleur: this.props.save.couleur,
-            energie: this.props.save.energie,
-            téléphone: this.props.save.téléphone,
-            image: this.props.save.image,
-            prix: this.props.save.prix,
-
-
-
-        })
+    componentDidMount() {
+        this.setState(
+            this.props.cars.filter(el => String(el._id) === this.props.match.params.id)[0]
+        )
     }
-}    
+    
+//componentWillReceiveProps(nextProps){
+  //  this.setState(nextProps.save)
+//}
 
     render() {
         return (
@@ -75,7 +68,8 @@ componentDidMount(){
                     <button onClick={e => {
                         e.preventDefault()
                         if (this.props.save) {
-                            this.props.editcar({car:this.state,_id:this.props.save._id})
+                            this.props.editcar(this.state)
+                            this.props.getagencycar()
                             this.props.clearsave()
                             this.setState({
                                 modele: '',
@@ -111,8 +105,9 @@ componentDidMount(){
 
 const mapStateToProps = state => {
     return {
+        cars: state.Agencyreducer.cars,
         save: state.Agencyreducer.saved
     }
 }
 
-export default connect(mapStateToProps, {addcar,editcar,clearsave})(CarForm) 
+export default connect(mapStateToProps,{addcar,editcar,clearsave,getagencycar})(CarForm) 

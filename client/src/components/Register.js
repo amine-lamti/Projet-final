@@ -90,6 +90,19 @@ class Register extends Component {
                     <input type="password" className="form-control" placeholder="Enter password" name="password" onChange={this.handleChange}/>
                 </div>
 
+                {
+                    this.state.type === "agence" && <div>
+                        <div className="form-group">
+                    <label>Win inti</label>
+                    <input type="password" className="form-control" placeholder="Enter password" name="password" onChange={this.handleChange}/>
+                </div>
+                <div className="form-group">
+                    <label>9adeh men karhba andek</label>
+                    <input type="password" className="form-control" placeholder="Enter password" name="password" onChange={this.handleChange}/>
+                </div>
+                        </div>
+                }
+
                 <button className="btn btn-primary btn-block" onClick={this.registerNow}>Sign Up</button>
                 <p className="forgot-password text-right">
                     Already registered <Link to="/login">Sign In?</Link>

@@ -43,7 +43,7 @@ router.post('/', [auth, [
 })
 
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', auth,(req, res) => {
     Car.findById(req.params.id)
     .then(car => {
         if(!car){
@@ -51,7 +51,7 @@ router.delete('/:id', (req, res) => {
         }else if(car.user.toString() !== req.user.id){
             res.json({msg: 'Not authorized!'})
         }else{
-         Car.findByIdAndDelete(req.params.id, {$set: carUpdate}, (err, data) => {
+         Car.findByIdAndDelete(req.params.id, (err, data) => {
              res.json({msg: "Car deleted!"})  
         })
     }
@@ -60,7 +60,7 @@ router.delete('/:id', (req, res) => {
  })
  
 
-router.put('/:id', (req, res) => {
+router.put('/:id',auth,(req, res) => {
 const { modele, energie, téléphone, prix, couleur, image } = req.body
 
 let carUpdate = {}
@@ -74,13 +74,13 @@ if (image) carUpdate.image = image
 Car.findById(req.params.id)
    .then(car => {
        if(!car){
-           return res.json({msg: 'Car not found!'})           
+           return res.status(404).json({msg: 'Car not found!'})           
        }else if(car.user.toString() !== req.user.id){
-           res.json({msg: 'Not authorized!'})
+           res.status(404).json({msg: 'Not authorized!'})
        }else{
         Car.findByIdAndUpdate(req.params.id, {$set: carUpdate}, (err, data) => {
             if(err) throw err
-            res.json({msg: "Car updated!"})  
+            res.status(404).json({msg: "Car updated!"})  
        })
    }
 })

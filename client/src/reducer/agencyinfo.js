@@ -22,7 +22,7 @@ const Agencyreducer = (state = initialestate, action) => {
         case CLEAR_CURRENTCAR:
             return {
                 ...state,
-                cars: [...state.cars,action.payload]
+                cars:[]
             }
         
         case CAR_ERR:
@@ -43,7 +43,7 @@ const Agencyreducer = (state = initialestate, action) => {
         case UPDATE_CAR:
             return {
                 ...state,
-                cars: state.cars.map(el => el._id === action.payload.id ? action.payload.car : el)
+                cars: state.cars.map(el => el._id === action.payload._id ? action.payload : el)
             }
             case CLEARSAVED_CAR:
                 return{
