@@ -10,7 +10,7 @@ const Clientcar =(state=initialestate,action)=>{
     switch(action.type){
         case GET_CLIENTCAR:
             return {...state,
-                cars:action.payload}
+                cars:action.payload}  
                     case CLEAR_CURRENTCAR:
                         return {
                             ...state,
