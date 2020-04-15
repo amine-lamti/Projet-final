@@ -53,10 +53,10 @@ class Navbar extends Component {
                    <Link class="nav-link" to="/">Acceuil<span class="sr-only">(current)</span></Link>
                </li>
                <li class="nav-item">
-                   <Link class="nav-link" to="/vehicule">Mes véhicules</Link>
+                   <Link class="nav-link" to="/cars">véhicules</Link>
                </li>
                <li class="nav-item">
-                   <Link class="nav-link" to="/">Mes agences</Link>
+                   <Link class="nav-link" to="/monagence">Mon agence</Link>
                </li>
                <li class="nav-item">
                    <Link class="nav-link" to="/">Mes Commandes</Link>

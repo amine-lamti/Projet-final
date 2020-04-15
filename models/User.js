@@ -25,6 +25,14 @@ const UserSchema=mongoose.Schema({
     type:{
         type:String,
         required:true
+    },
+    agence:{
+        type:String,
+        required:false
+    },
+    lieu:{
+        type:String,
+        required:false
     }
 
 })

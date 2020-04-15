@@ -20,9 +20,10 @@ class CarForm extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
     componentDidMount() {
-        this.setState(
+        if(this.props.save){this.setState(
             this.props.cars.filter(el => String(el._id) === this.props.match.params.id)[0]
-        )
+        )}
+        
     }
     
 //componentWillReceiveProps(nextProps){
@@ -71,6 +72,8 @@ class CarForm extends Component {
                             this.props.editcar(this.state)
                             this.props.getagencycar()
                             this.props.clearsave()
+                            this.props.history.push('/vehicule')
+
                             this.setState({
                                 modele: '',
                                 couleur: '',
@@ -82,6 +85,8 @@ class CarForm extends Component {
                             })}
                         else {
                             this.props.addcar(this.state)
+                            this.props.history.push('/vehicule')
+
 
                             this.setState({
                                 modele: '',
