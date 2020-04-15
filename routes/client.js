@@ -15,7 +15,7 @@ router.post('/',[
     if(!errors.isEmpty()){
         return res.json({errors:errors.array()})
     }
-    const {firstname,lastname,email,password,type}=req.body
+    const {firstname,lastname,email,password,type,agence,lieu}=req.body
     User.findOne({email})
     .then(user=>{ 
         if(user){
@@ -23,7 +23,7 @@ router.post('/',[
         }
         else{
             user=new User({
-                firstname,lastname,email,password,type
+                firstname,lastname,email,password,type,agence,lieu
             })
             bcrypt.genSalt(10,(err,salt)=>{
                 bcrypt.hash(user.password,salt,(err,hashedpassword)=>{
