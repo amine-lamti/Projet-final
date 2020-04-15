@@ -16,7 +16,9 @@ class Register extends Component {
             lastname: '',
             email: '',
             password: '',
-            type:''
+            type:'',
+            agence:'',
+            lieu:''
         }
     }
     handleChange = e => {
@@ -31,15 +33,23 @@ class Register extends Component {
             setTimeout(() => {
                 this.props.removeAlert(id)
             }, 5000);
-        }else{ 
-            this.props.register({
+        }else{ if(this.state.type==="agence"){this.props.register({
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            email: this.state.email,
+            password: this.state.password,
+            type: this.state.type,
+            agence:this.state.agence,
+            lieu:this.state.lieu
+
+        })}
+        else{this.props.register({
             firstname: this.state.firstname,
             lastname: this.state.lastname,
             email: this.state.email,
             password: this.state.password,
             type: this.state.type
-        })
-
+        })}
         }
     }
     componentWillReceiveProps(nextProps) {
@@ -93,12 +103,12 @@ class Register extends Component {
                 {
                     this.state.type === "agence" && <div>
                         <div className="form-group">
-                    <label>Win inti</label>
-                    <input type="password" className="form-control" placeholder="Enter password" name="password" onChange={this.handleChange}/>
+                    <label>nom de votre agence</label>
+                    <input type="text" className="form-control" placeholder="Enter password" name="agence" onChange={this.handleChange}/>
                 </div>
                 <div className="form-group">
-                    <label>9adeh men karhba andek</label>
-                    <input type="password" className="form-control" placeholder="Enter password" name="password" onChange={this.handleChange}/>
+                    <label>lieu de votre agence</label>
+                    <input type="text" className="form-control" placeholder="Enter password" name="lieu" onChange={this.handleChange}/>
                 </div>
                         </div>
                 }

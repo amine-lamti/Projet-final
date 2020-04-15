@@ -10,9 +10,9 @@ import Login from './components/Login';
 import Alerts from './components/Alerts';
 import setAuthToken from './utils/setAuthToken';
 import CarItem from './components/CarItem'
-import Mesvehicule from './components/Mesvehicule'
 import CarForm from './components/CarForm'
 import Clientcar from './components/Clientcar'
+import Monagence from './components/Monagence'
 
 //import PrivateRoute from './components/PrivateRoute'
 
@@ -34,7 +34,7 @@ function App() {
       <Route  path="/caritem/:id" component={CarItem}/>
       <Route  path="/carform/:id" component={CarForm}/>
       <Route  path="/cars" component={Clientcar}/>
-      <Route  path="/vehicule" component={Mesvehicule}/>
+      <Route  path="/monagence" component={Monagence}/>
 
 
 
