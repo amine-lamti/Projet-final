@@ -32,47 +32,48 @@ class CarForm extends Component {
 
     render() {
         return (
-            <div className="div">
-                <div>
-                    <form>
-                        <div>
-                            <label>modele: </label>
-                            <input name="modele" type="text" onChange={this.handleChange} value={this.state.modele} />
-                        </div>
+           
+                <div className="register">
+                <form>
+                <h3 className="sign">{this.props.save ? 'Edit Car' : 'Add Car'}</h3>
+               
+                <div className="form-group">
+                    <label>modele</label>
+                    <input type="text" className="form-control" placeholder="modele" name="modele" onChange={this.handleChange}/>
+                </div>
 
-                        <div>
-                            <label>couleur: </label>
-                            <input name="couleur" type="text" onChange={this.handleChange} value={this.state.couleur} />
-                        </div>
+                <div className="form-group">
+                    <label>couleur</label>
+                    <input type="text" className="form-control" placeholder="couleur" name="couleur" onChange={this.handleChange}/>
+                </div>
 
-                        <div>
-                            <label>energie: </label>
-                            <input name="energie" type="text" onChange={this.handleChange} value={this.state.energie} />
+                <div className="form-group">
+                    <label>énérgie</label>
+                    <input type="text" className="form-control" placeholder="Enter email" name="energie" onChange={this.handleChange}/>
+                </div>
 
-                        </div>
+                <div className="form-group">
+                    <label>téléphone</label>
+                    <input type="text" className="form-control" placeholder="Enter téléphone" name="téléphone" onChange={this.handleChange}/>
+                </div>
+                <div className="form-group">
+                    <label>image</label>
+                    <input type="text" className="form-control" placeholder="Enter image" name="image" onChange={this.handleChange}/>
+                </div>
+                <div className="form-group">
+                    <label>prix</label>
+                    <input type="text" className="form-control" placeholder="Enter prix" name="prix" onChange={this.handleChange}/>
+                </div>
 
-                        <div>
-                            <label>téléphone: </label>
-                            <input name="téléphone" type="text" onChange={this.handleChange} value={this.state.téléphone} />
-                        </div>
+                
 
-                        <div>
-                            <label>image: </label>
-                            <input name="image" type="text" onChange={this.handleChange} value={this.state.image} />
-                        </div>
-
-                        <div>
-                            <label>prix: </label>
-                            <input name="prix" type="text" onChange={this.handleChange} value={this.state.prix} />
-                        </div>
-                    </form>
-                    <button onClick={e => {
+                <button className="btn btn-primary btn-block" onClick={e => {
                         e.preventDefault()
                         if (this.props.save) {
                             this.props.editcar(this.state)
                             this.props.getagencycar()
                             this.props.clearsave()
-                            this.props.history.push('/vehicule')
+                            this.props.history.push('/cars')
 
                             this.setState({
                                 modele: '',
@@ -85,7 +86,7 @@ class CarForm extends Component {
                             })}
                         else {
                             this.props.addcar(this.state)
-                            this.props.history.push('/vehicule')
+                            this.props.history.push('/cars')
 
 
                             this.setState({
@@ -100,8 +101,12 @@ class CarForm extends Component {
                             })
                         }
                     }}>{this.props.save ? 'Edit Car' : 'Add Car'}</button>
+                
+            </form>
+            
+                   
                 </div>
-            </div>
+           
 
         )
     }
