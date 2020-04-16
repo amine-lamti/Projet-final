@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Card, CardDeck } from "react-bootstrap"
+import { connect } from "react-redux"
+import { Link } from "react-router-dom"
+
 
 class Image extends Component {
     render() {
@@ -19,7 +22,8 @@ class Image extends Component {
       </Card.Text>
     </Card.Body>
     <Card.Footer>
-      <button className="myButton">Réserver gratuitement</button>
+     <button className="myButton"> {this.props.auth.isAuthenticated ? <Link to="/cars">Réserver gratuitemen</Link>: <Link to="/login">Réserver gratuitemen</Link>} </button>
+       
     </Card.Footer>
   </Card>
   <Card>
@@ -31,7 +35,7 @@ class Image extends Component {
       </Card.Text>
     </Card.Body>
     <Card.Footer>
-      <button className="myBtn">Déposer votre agence gratuitement</button>
+      <button className="myBtn">{this.props.auth.isAuthenticated ? <Link to="/monagence">Deposer votre agence gratuitemen</Link>: <Link to="/login">Deposer votre agence gratuitemen</Link>}</button>
     </Card.Footer>
   </Card>
   <Card>
@@ -43,7 +47,7 @@ class Image extends Component {
       </Card.Text>
     </Card.Body>
     <Card.Footer>
-      <button className="myButton">Réserver gratuitement</button>
+      <button className="myButton">{this.props.auth.isAuthenticated ? <Link to="/cars">Réserver gratuitemen</Link>: <Link to="/login">Réserver gratuitemen</Link>}</button>
     </Card.Footer>
   </Card>
 </CardDeck>
@@ -51,5 +55,10 @@ class Image extends Component {
         );
     }
 }
+const mapStateToProps=state=>{
+  return{
+    auth:state.auth
+  }
+}
 
-export default Image;
+export default connect(mapStateToProps)(Image);
