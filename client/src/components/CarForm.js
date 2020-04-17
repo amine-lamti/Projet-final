@@ -39,30 +39,30 @@ class CarForm extends Component {
                
                 <div className="form-group">
                     <label>modele</label>
-                    <input type="text" className="form-control" placeholder="modele" name="modele" onChange={this.handleChange}/>
+                    <input type="text" className="form-control" placeholder="modele" name="modele" value={this.state.modele} onChange={this.handleChange}/>
                 </div>
 
                 <div className="form-group">
                     <label>couleur</label>
-                    <input type="text" className="form-control" placeholder="couleur" name="couleur" onChange={this.handleChange}/>
+                    <input type="text" className="form-control" placeholder="couleur" name="couleur" value={this.state.couleur} onChange={this.handleChange}/>
                 </div>
 
                 <div className="form-group">
                     <label>énérgie</label>
-                    <input type="text" className="form-control" placeholder="Enter email" name="energie" onChange={this.handleChange}/>
+                    <input type="text" className="form-control" placeholder="Enter email" name="energie" value={this.state.energie} onChange={this.handleChange}/>
                 </div>
 
                 <div className="form-group">
                     <label>téléphone</label>
-                    <input type="text" className="form-control" placeholder="Enter téléphone" name="téléphone" onChange={this.handleChange}/>
+                    <input type="text" className="form-control" placeholder="Enter téléphone" name="téléphone" value={this.state.téléphone} onChange={this.handleChange}/>
                 </div>
                 <div className="form-group">
                     <label>image</label>
-                    <input type="text" className="form-control" placeholder="Enter image" name="image" onChange={this.handleChange}/>
+                    <input type="text" className="form-control" placeholder="Enter image" name="image" value={this.state.image} onChange={this.handleChange}/>
                 </div>
                 <div className="form-group">
                     <label>prix</label>
-                    <input type="text" className="form-control" placeholder="Enter prix" name="prix" onChange={this.handleChange}/>
+                    <input type="text" className="form-control" placeholder="Enter prix" name="prix" value={this.state.prix} onChange={this.handleChange}/>
                 </div>
 
                 
