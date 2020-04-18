@@ -1,10 +1,10 @@
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { saved, deletecar, getclientcar } from '../actions/CarActions'
-import React, { Component } from 'react';
 import { loadUser } from "../actions/AuthActions";
 import { Link } from "react-router-dom"
 import ReactCardFlip from 'react-card-flip';
-import {Card,Button} from "react-bootstrap"
+
 
 
 class CarItem extends Component {
@@ -32,13 +32,13 @@ class CarItem extends Component {
       this.setState({ type: nextprops.auth.user.type, cars: nextprops.car.filter(el => el._id == this.props.id)[0]});
     }
   }
-  client = () => (<button>réserver</button>)
+  client = () => (<button className="myBtn">réserver</button>)
 
 
 
   agence = () => (<div>
-    <button onClick={() => this.props.saved(this.state)}><Link to={`/carform/${this.state.cars._id}`}>EDIT </Link> </button>
-    <button onClick={() => this.props.deletecar(this.state.cars._id)}>DELETE</button></div>)
+    <button className="myBtn" onClick={() => this.props.saved(this.state)}><Link to={`/carform/${this.state.cars._id}`}>EDIT </Link> </button>
+    <button className="myBtn" onClick={() => this.props.deletecar(this.state.cars._id)}>DELETE</button></div>)
 
 
 handleClick(e) {
@@ -47,35 +47,43 @@ handleClick(e) {
 }
 
   render() {
-    return (
-      <div className="card fav-item">
- <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
-        <div>
-        <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={this.state.cars.image} />
-            <Card.Body>
-        <Card.Title>{this.state.cars.modele}</Card.Title>
-              <Card.Text>
-               {this.state.cars.prix}
-              </Card.Text>
-              <Button variant="dark" className="butn" onClick={this.handleClick}>see more</Button>
-            </Card.Body>
-          </Card>
-      </div>
- 
-        <div className="infos">
-       { this.state.cars ? <div><img src={this.state.cars.image} />
-          <h1>{this.state.cars.modele}</h1>
-          <h1>{this.state.cars.energie}</h1>
-          <h1>{this.state.cars.couleur}</h1>
-          <h1>{this.state.cars.téléphone}</h1>
-          <h1>{this.state.cars.prix}</h1>
-          {this.state.cars.user === this.props.auth.user._id ? this.agence() : this.client()} 
-          <button onClick={this.handleClick}>retour</button>
+    return (     
+      <div class="container">
+ <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">  
+
+ <div class="row">         
+<div class="col-sm-3">
+<div class="card card-block">
+  <img class="card-img-top" alt="100%x180" src={this.state.cars.image} style={{height: "180px", width: "100%", display: "block"}}/>
+  <div class="card-block">
+    <h1 class="card-title">{this.state.cars.modele}</h1>
+    <h6 class="card-text">{this.state.cars.prix}</h6>
+    <a href="#" className="myButton" onClick={this.handleClick}>See more</a>
+  </div>
+  </div>
+</div>
+</div> 
+
+
+        <div class="row">
+       { this.state.cars ? <div class="col-sm-3">
+          <div class="card card-block">
+          <img class="card-img-top" alt="100%x180" src={this.state.cars.image} style={{height: "180px", width: "100%", display: "block"}}/>
+          <div class="card-block">
+          <h1 class="card-title">{this.state.cars.modele}</h1>
+          <h6 class="card-title">{this.state.cars.energie}</h6>
+          <h6 class="card-title">{this.state.cars.couleur}</h6>
+          <h6 class="card-title">{this.state.cars.téléphone}</h6>
+          <h6 class="card-title">{this.state.cars.prix}</h6>
+          <a href="#" className="myButton" onClick={this.handleClick}>Retour</a>
+          {this.state.cars.user === this.props.auth.user._id ? this.agence() : this.client()}   
+          </div>
+          </div>
           </div> : "...Loading"}    
         </div>
+    
       </ReactCardFlip>
-      </div>
+     </div>
     )
   }
 }

@@ -5,9 +5,9 @@ class Monagence extends Component {
    
     render() {
         return (
-            <div className="profil">
+            <div>
                 <Agencyinfo/>
-                <Agencycar className="agencycar"/>
+                <Agencycar/>
             </div>
         );
     }

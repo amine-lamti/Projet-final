@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 import Acceuil from './components/Acceuil';
-import Reservation from './components/Reservation';
 import Register from './components/Register';
 import Login from './components/Login';
 import Alerts from './components/Alerts';
@@ -28,18 +27,12 @@ function App() {
     <Alerts />
     <Switch>
       <Route  exact path="/" component={Acceuil}/>
-      <Route  path="/reservation" component={Reservation}/>
       <Route  path="/register" component={Register}/>
       <Route  path="/login" component={Login}/>
       <Route  path="/caritem/:id" component={CarItem}/>
       <Route  path="/carform/:id" component={CarForm}/>
       <Route  path="/cars" component={Clientcar}/>
       <Route  path="/monagence" component={Monagence}/>
-
-
-
-
-
     </Switch>
     </BrowserRouter>
     </div>
