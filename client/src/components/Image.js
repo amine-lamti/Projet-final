@@ -22,7 +22,7 @@ class Image extends Component {
       </Card.Text>
     </Card.Body>
     <Card.Footer>
-     <button className="myButton"> {this.props.auth.isAuthenticated ? <Link to="/cars">Réserver gratuitemen</Link>: <Link to="/login">Réserver gratuitemen</Link>} </button>
+     <button className="myButton"> {this.props.auth.isAuthenticated ? <Link to="/cars">Réserver gratuitement</Link>: <Link to="/login">Réserver gratuitement</Link>} </button>
        
     </Card.Footer>
   </Card>
@@ -35,7 +35,7 @@ class Image extends Component {
       </Card.Text>
     </Card.Body>
     <Card.Footer>
-      <button className="myBtn">{this.props.auth.isAuthenticated ? <Link to="/monagence">Deposer votre agence gratuitemen</Link>: <Link to="/login">Deposer votre agence gratuitemen</Link>}</button>
+      <button className="myBtn">{this.props.auth.isAuthenticated ? <Link to="/monagence">Déposer votre annonce gratuitement</Link>: <Link to="/login">Déposer votre annonce gratuitement</Link>}</button>
     </Card.Footer>
   </Card>
   <Card>
@@ -47,7 +47,7 @@ class Image extends Component {
       </Card.Text>
     </Card.Body>
     <Card.Footer>
-      <button className="myButton">{this.props.auth.isAuthenticated ? <Link to="/cars">Réserver gratuitemen</Link>: <Link to="/login">Réserver gratuitemen</Link>}</button>
+      <button className="myButton">{this.props.auth.isAuthenticated ? <Link to="/cars">Réserver gratuitement</Link> : <Link to="/login">Réserver gratuitement</Link>}</button>
     </Card.Footer>
   </Card>
 </CardDeck>
