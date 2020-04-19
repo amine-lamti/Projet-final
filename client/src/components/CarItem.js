@@ -11,7 +11,6 @@ class CarItem extends Component {
   constructor(props){
     super(props)
     this.state = {
-      type: "client",
       cars:{},
       isFlipped: false
   
@@ -28,27 +27,29 @@ class CarItem extends Component {
 }
   componentWillReceiveProps(nextprops){
     console.log(this.props.auth.isAuthenticated)
-    if (this.props.auth.isAuthenticated) {
-      this.setState({ type: nextprops.auth.user.type, cars: nextprops.car.filter(el => el._id == this.props.id)[0]});
+    if (this.props.car) {
+      this.setState({cars: nextprops.car.filter(el => el._id == this.props.id)[0]});
     }
   }
-  client = () => (<button className="myBtn">réserver</button>)
+  client = () => (<a href="#" className="myBtn">Réserver</a>)
 
 
 
   agence = () => (<div>
-    <button className="myBtn" onClick={() => this.props.saved(this.state)}><Link to={`/carform/${this.state.cars._id}`}>EDIT </Link> </button>
-    <button className="myBtn" onClick={() => this.props.deletecar(this.state.cars._id)}>DELETE</button></div>)
+    <a href="#" className="myBtn" onClick={() => this.props.saved(this.state)}><Link to={`/carform/${this.state.cars._id}`}>Editer</Link></a>
+    <a href="#" className="myBtn" onClick={() => this.props.deletecar(this.state.cars._id)}>Supprimer</a></div>)
 
 
 handleClick(e) {
   e.preventDefault();
-  this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
+  if (this.props.auth.isAuthenticated){
+  this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));}
 }
 
   render() {
     return (     
       <div class="container">
+        {this.state.cars ? 
  <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">  
 
  <div class="row">         
@@ -57,14 +58,14 @@ handleClick(e) {
   <img class="card-img-top" alt="100%x180" src={this.state.cars.image} style={{height: "180px", width: "100%", display: "block"}}/>
   <div class="card-block">
     <h1 class="card-title">{this.state.cars.modele}</h1>
-    <h6 class="card-text">{this.state.cars.prix}</h6>
-    <a href="#" className="myButton" onClick={this.handleClick}>See more</a>
+    <h6 class="card-text"><span className="prix">{this.state.cars.prix}  DT/JOUR</span></h6>
+    {!this.props.auth.isAuthenticated ? <button className="myButton"><Link to="/login">Voir</Link></button> : < button className="myButton" onClick={this.handleClick}>Voir</button> }
   </div>
   </div>
 </div>
 </div> 
 
-
+        
         <div class="row">
        { this.state.cars ? <div class="col-sm-3">
           <div class="card card-block">
@@ -74,15 +75,15 @@ handleClick(e) {
           <h6 class="card-title">{this.state.cars.energie}</h6>
           <h6 class="card-title">{this.state.cars.couleur}</h6>
           <h6 class="card-title">{this.state.cars.téléphone}</h6>
-          <h6 class="card-title">{this.state.cars.prix}</h6>
+          <h6 class="card-title"><span className="prix">{this.state.cars.prix}  DT/Jour</span></h6>
           <a href="#" className="myButton" onClick={this.handleClick}>Retour</a>
-          {this.state.cars.user === this.props.auth.user._id ? this.agence() : this.client()}   
+          {this.props.auth.user ? (this.state.cars.user === this.props.auth.user._id ? this.agence() : this.client()) : this.client()}   
           </div>
           </div>
           </div> : "...Loading"}    
         </div>
     
-      </ReactCardFlip>
+        </ReactCardFlip> : "...Loading"}
      </div>
     )
   }

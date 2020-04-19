@@ -19,11 +19,11 @@ class CarForm extends Component {
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value })
     }
+
+
     componentDidMount() {
-        if(this.props.save){this.setState(
-            this.props.cars.filter(el => String(el._id) === this.props.match.params.id)[0]
-        )}
-        
+        if(this.props.save) {
+            this.setState(this.props.cars.filter(el => String(el._id) === this.props.match.params.id)[0])}      
     }
     
 //componentWillReceiveProps(nextProps){
@@ -38,30 +38,30 @@ class CarForm extends Component {
                 <h3 className="sign">{this.props.save ? 'Edit Car' : 'Add Car'}</h3>
                
                 <div className="form-group">
-                    <label>modele</label>
-                    <input type="text" className="form-control" placeholder="modele" name="modele" value={this.state.modele} onChange={this.handleChange}/>
+                    <label>Modéle</label>
+                    <input type="text" className="form-control" placeholder="Enter modéle" name="modele" value={this.state.modele} onChange={this.handleChange}/>
                 </div>
 
                 <div className="form-group">
-                    <label>couleur</label>
-                    <input type="text" className="form-control" placeholder="couleur" name="couleur" value={this.state.couleur} onChange={this.handleChange}/>
+                    <label>Couleur</label>
+                    <input type="text" className="form-control" placeholder="Enter couleur" name="couleur" value={this.state.couleur} onChange={this.handleChange}/>
                 </div>
 
                 <div className="form-group">
-                    <label>énérgie</label>
-                    <input type="text" className="form-control" placeholder="Enter email" name="energie" value={this.state.energie} onChange={this.handleChange}/>
+                    <label>Carburant<span className="gris">  (Essence/Diesel)</span></label>
+                    <input type="text" className="form-control" placeholder="Enter carburant" name="energie" value={this.state.energie} onChange={this.handleChange}/>
                 </div>
 
                 <div className="form-group">
-                    <label>téléphone</label>
+                    <label>Téléphone</label>
                     <input type="text" className="form-control" placeholder="Enter téléphone" name="téléphone" value={this.state.téléphone} onChange={this.handleChange}/>
                 </div>
                 <div className="form-group">
-                    <label>image</label>
+                    <label>Image</label>
                     <input type="text" className="form-control" placeholder="Enter image" name="image" value={this.state.image} onChange={this.handleChange}/>
                 </div>
                 <div className="form-group">
-                    <label>prix</label>
+                    <label>Prix<span className="gris">  (DT/JOUR)</span></label>
                     <input type="text" className="form-control" placeholder="Enter prix" name="prix" value={this.state.prix} onChange={this.handleChange}/>
                 </div>
 
@@ -73,7 +73,7 @@ class CarForm extends Component {
                             this.props.editcar(this.state)
                             this.props.getagencycar()
                             this.props.clearsave()
-                            this.props.history.push('/cars')
+                            this.props.history.push('/monagence')
 
                             this.setState({
                                 modele: '',
@@ -86,7 +86,7 @@ class CarForm extends Component {
                             })}
                         else {
                             this.props.addcar(this.state)
-                            this.props.history.push('/cars')
+                            this.props.history.push('/monagence')
 
 
                             this.setState({

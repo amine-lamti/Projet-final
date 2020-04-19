@@ -61,7 +61,7 @@ class Register extends Component {
             this.props.setAlert(nextProps.auth.error, 'danger', id)
             setTimeout(() => {
                 this.props.removeAlert(id)
-                this.props.clearError()
+              //  this.props.clearError()
             }, 5000);
         }
     }
@@ -103,12 +103,12 @@ class Register extends Component {
                 {
                     this.state.type === "agence" && <div>
                         <div className="form-group">
-                    <label>nom de votre agence</label>
-                    <input type="text" className="form-control" placeholder="Enter password" name="agence" onChange={this.handleChange}/>
+                    <label>Name of your agency</label>
+                    <input type="text" className="form-control" placeholder="Name of your agency" name="agence" onChange={this.handleChange}/>
                 </div>
                 <div className="form-group">
-                    <label>lieu de votre agence</label>
-                    <input type="text" className="form-control" placeholder="Enter password" name="lieu" onChange={this.handleChange}/>
+                    <label>Location of your agency</label>
+                    <input type="text" className="form-control" placeholder="Location of your agency" name="lieu" onChange={this.handleChange}/>
                 </div>
                         </div>
                 }

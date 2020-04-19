@@ -28,6 +28,14 @@
     justify-content: space-around;
 }
 
+.gris {
+    color: gray;
+}
+
+.prix {
+    color: red;
+}
+
 .pop1 {
     display: flex;
     justify-content: space-between;

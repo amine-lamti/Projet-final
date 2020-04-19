@@ -40,7 +40,7 @@ class Navbar extends Component {
                    <Link class="nav-link" to="/cars">Véhicules</Link>
                </li>
                <li class="nav-item">
-                   <Link class="nav-link" to="/">Agences</Link>
+                   <Link class="nav-link" to="/agences">Agences</Link>
                </li>
                <li class="nav-item">
                    <Link class="nav-link" to="/reservation">Réservation</Link>
@@ -83,10 +83,10 @@ class Navbar extends Component {
                     <Link class="nav-link" to="/">Acceuil<span class="sr-only">(current)</span></Link>
                 </li>
                 <li class="nav-item">
-                   <Link class="nav-link" to="/vehicule">Conseils</Link>
+                   <Link class="nav-link" to="/cars">véhicules</Link>
                </li>
                <li class="nav-item">
-                   <Link class="nav-link" to="/reservation">Contact</Link>
+                   <Link class="nav-link" to="/">Contact</Link>
                </li>            
                 <li class="nav-item">
                     <Link class="nav-link btn btn-primary text-white" type="button" to="/login" data-toggle="modal" data-target="#myModal"><i class="fas fa-sign-in-alt"> Se connecter</i></Link>                  
