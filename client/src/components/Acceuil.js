@@ -29,9 +29,6 @@ class Acceuil extends React.Component {
   render() {
     return (
       <div>
-    
-  
-
  <CarouselPage />
  <Image />
  <Conseil />
