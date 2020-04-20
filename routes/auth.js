@@ -32,7 +32,7 @@ router.post('/', [
       .then(user => {
           if(!user){
               
-              return res.json({msg: "Please Register Before!"})             
+              return res.json({error: "Please Register Before!"})             
           }else{
      
               bcrypt.compare(password, user.password, (err, isMatch) => {
@@ -49,12 +49,15 @@ router.post('/', [
                           res.json({token})
                       })
                   }else{
-                      return res.json({msg: "Wrong Password!"})
+                      return res.json({error: "Wrong Password!"})
                   }
               })
           }
       })
-    .catch(err => console.log(err.message))
+    .catch(err => {
+        console.log(err.message)
+        res.send(err.message)
+    })
 })
 
 module.exports = router

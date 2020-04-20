@@ -12,7 +12,7 @@ class Image extends Component {
                 <h1>Effectuez votre réservation ou déposer votre annonce en quelques clics !</h1>
                 <p>C'est un site web, qui regroupe touts les agences de location véhicules dans une région. Ce site porte aussi toutes les informations des agences (Adresses, Téléphones, email, site web . . .) et il permet de faire une réservation des véhicules en ligne</p>
               </div>
-                <CardDeck>
+                <CardDeck style={{width: '100%', margin: '0'}}>
   <Card>
     <Card.Img variant="top" src="https://cdn2.webmanagercenter.com/wmc/wp-content/uploads/2019/06/federation-location-voitures.jpg" />
     <Card.Body>
@@ -21,9 +21,8 @@ class Image extends Component {
       Réservez la voiture adaptée pour vous et commencez votre voyage. C'est simple et rapide !
       </Card.Text>
     </Card.Body>
-    <Card.Footer>
-     <button className="myButton"> {this.props.auth.isAuthenticated ? <Link to="/cars">Réserver gratuitement</Link>: <Link to="/login">Réserver gratuitement</Link>} </button>
-       
+    <Card.Footer>   
+      {this.props.auth.isAuthenticated ? <Link class="nav-link border border-dark text-dark" type="button" to="/cars" data-toggle="modal" data-target="#myModal">Réserver gratuitement</Link> : <Link class="nav-link border border-dark text-dark" type="button" to="/login" data-toggle="modal" data-target="#myModal">Réserver gratuitement</Link>}
     </Card.Footer>
   </Card>
   <Card>
@@ -35,7 +34,7 @@ class Image extends Component {
       </Card.Text>
     </Card.Body>
     <Card.Footer>
-      <button className="myBtn">{this.props.auth.isAuthenticated ? <Link to="/monagence">Déposer votre annonce gratuitement</Link>: <Link to="/login">Déposer votre annonce gratuitement</Link>}</button>
+    {this.props.auth.isAuthenticated ? <Link class="nav-link border border-warning text-warning" type="button" to="/monagence" data-toggle="modal" data-target="#myModal">Déposer votre annonce gratuitement</Link> : <Link class="nav-link border border-warning text-warning" type="button" to="/register" data-toggle="modal" data-target="#myModal">Déposer votre annonce gratuitement</Link>}
     </Card.Footer>
   </Card>
   <Card>
@@ -47,7 +46,7 @@ class Image extends Component {
       </Card.Text>
     </Card.Body>
     <Card.Footer>
-      <button className="myButton">{this.props.auth.isAuthenticated ? <Link to="/cars">Réserver gratuitement</Link> : <Link to="/login">Réserver gratuitement</Link>}</button>
+    {this.props.auth.isAuthenticated ? <Link class="nav-link border border-dark text-dark" type="button" to="/cars" data-toggle="modal" data-target="#myModal">Réserver gratuitement</Link> : <Link class="nav-link border border-dark text-dark" type="button" to="/login" data-toggle="modal" data-target="#myModal">Réserver gratuitement</Link>}
     </Card.Footer>
   </Card>
 </CardDeck>

@@ -3,7 +3,7 @@ import React from 'react'
 function Conseil() {
     return (
         <div className="conseil">
-        
+        <div>
             <h1>Lisez quelques conseils simples pour éviter les accidents de la route avant louer une véhicule</h1>
           <ul>
               <li>Respectez les limitations de vitesse.</li>
@@ -15,7 +15,11 @@ function Conseil() {
               <li>Mettez toujours votre ceinture de sécurité.</li>
               <li>Respectez les stops et les feux rouges.</li>
           </ul>  
-          <a href="https://fr.wikihow.com/%C3%A9viter-les-accidents-de-voiture">savoir plus</a>
+          <a className="savoir" href="https://fr.wikihow.com/%C3%A9viter-les-accidents-de-voiture"><i class="fas fa-angle-double-right text-warning"> savoir plus</i></a>
+        </div>
+        <div>
+            <img className="img" src="https://www.argusautomobile.tn/wp-content/uploads/2018/11/accident1.jpg"/>
+        </div>
         </div>
     )
 }

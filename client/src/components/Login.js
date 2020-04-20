@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { login } from '../actions/AuthActions'
+import { login, clearError } from '../actions/AuthActions'
 import { setAlert, removeAlert } from '../actions/AlertActions'
 
 class Login extends Component {
@@ -19,17 +19,16 @@ class Login extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if(nextProps.auth.isAuthenticated){
-            this.props.history.push('/')
-        }
-        if(nextProps.auth.error === 'Please Register Before!' || nextProps.auth.error === 'Wrong Password!' ){
-            let id = uuidv4()
-            this.props.setAlert(nextProps.auth.error, 'warning', id)
-            setTimeout(() => {
-                this.props.removeAlert(id)
-                this.props.clearError()
-            }, 5000);
-        }
+        if(!nextProps.auth.error){             
+            this.props.history.push('/') }
+            if(nextProps.auth.error === 'Please Register Before!' || nextProps.auth.error === 'Wrong Password!' )
+            { let id = uuidv4()             
+        this.props.setAlert(nextProps.auth.error, 'warning', id)             
+        setTimeout(() => {                 
+            this.props.removeAlert(id)                 
+        }, 5000);         
+    }
+    
     }
     loginNow = (e) => {
         e.preventDefault()
@@ -40,10 +39,11 @@ class Login extends Component {
                 this.props.removeAlert(id)
             }, 5000);
         }else{
-            this.props.login({
-                email: this.state.email,
-                password: this.state.password
-            })
+            if(this.props.auth.error){ 
+                this.props.login({  email: this.state.email, password: this.state.password  })  
+            this.props.clearError()
+        }else{this.props.login({  email: this.state.email,  password: this.state.password    })  }  
+            
         } 
     }
   
@@ -88,4 +88,4 @@ const mapStateToProps = state => {
         auth: state.auth
     }
 }
-export default connect(mapStateToProps, { login, setAlert, removeAlert })(Login)
+export default connect(mapStateToProps, { login, setAlert, removeAlert, clearError })(Login)

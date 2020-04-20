@@ -31,7 +31,11 @@ class Acceuil extends React.Component {
       <div>
  <CarouselPage />
  <Image />
+ <div className="scroll-image-bg">
+ </div>
  <Conseil />
+ <div className="scroll-image-bg1">
+ </div>
  <MultiCarousel />
  <Footer />
       </div>
