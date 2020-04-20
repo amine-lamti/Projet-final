@@ -31,13 +31,13 @@ class CarItem extends Component {
       this.setState({cars: nextprops.car.filter(el => el._id == this.props.id)[0]});
     }
   }
-  client = () => (<a href="#" className="myBtn">Réserver</a>)
+  client = () => (<button>Réserver</button>)
 
 
 
   agence = () => (<div>
-    <a href="#" className="myBtn" onClick={() => this.props.saved(this.state)}><Link to={`/carform/${this.state.cars._id}`}>Editer</Link></a>
-    <a href="#" className="myBtn" onClick={() => this.props.deletecar(this.state.cars._id)}>Supprimer</a></div>)
+    <button onClick={() => this.props.saved(this.state)}><Link to={`/carform/${this.state.cars._id}`}>Editer</Link></button>
+    <button onClick={() => this.props.deletecar(this.state.cars._id)}>Supprimer</button></div>)
 
 
 handleClick(e) {
@@ -48,35 +48,35 @@ handleClick(e) {
 
   render() {
     return (     
-      <div class="container">
+      <div>
         {this.state.cars ? 
  <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">  
 
- <div class="row">         
-<div class="col-sm-3">
-<div class="card card-block">
-  <img class="card-img-top" alt="100%x180" src={this.state.cars.image} style={{height: "180px", width: "100%", display: "block"}}/>
-  <div class="card-block">
-    <h1 class="card-title">{this.state.cars.modele}</h1>
-    <h6 class="card-text"><span className="prix">{this.state.cars.prix}  DT/JOUR</span></h6>
-    {!this.props.auth.isAuthenticated ? <button className="myButton"><Link to="/login">Voir</Link></button> : < button className="myButton" onClick={this.handleClick}>Voir</button> }
+ <div className="row">         
+<div className="col">
+<div className="card card-block car-item-card">
+  <img className="card-img-top" alt="100%x180" src={this.state.cars.image} style={{height: "180px", width: "100%", display: "block"}}/>
+  <div className="card-block">
+    <h1 className="card-title">{this.state.cars.modele}</h1>
+    <h6 className="card-text"><span className="prix">{this.state.cars.prix}  DT/Jour</span></h6>
+    {!this.props.auth.isAuthenticated ? <button><Link to="/login">Voir</Link></button> : <button onClick={this.handleClick}>Voir</button> }
   </div>
   </div>
 </div>
 </div> 
 
         
-        <div class="row">
-       { this.state.cars ? <div class="col-sm-3">
-          <div class="card card-block">
-          <img class="card-img-top" alt="100%x180" src={this.state.cars.image} style={{height: "180px", width: "100%", display: "block"}}/>
-          <div class="card-block">
-          <h1 class="card-title">{this.state.cars.modele}</h1>
-          <h6 class="card-title">{this.state.cars.energie}</h6>
-          <h6 class="card-title">{this.state.cars.couleur}</h6>
-          <h6 class="card-title">{this.state.cars.téléphone}</h6>
-          <h6 class="card-title"><span className="prix">{this.state.cars.prix}  DT/Jour</span></h6>
-          <a href="#" className="myButton" onClick={this.handleClick}>Retour</a>
+        <div className="row">
+       { this.state.cars ? <div className="col">
+          <div className="cards">
+          <img className="ca" alt="100%x180" src={this.state.cars.image} style={{minHeight: "180px", minWidth: "100%", display: "block"}}/>
+          <div className="card-block">
+          <h1 className="card-title">{this.state.cars.modele}</h1>
+          <h6 className="card-title">{this.state.cars.energie}</h6>
+          <h6 className="card-title">{this.state.cars.couleur}</h6>
+          <h6 className="card-title">{this.state.cars.téléphone}</h6>
+          <h6 className="card-title"><span className="prix">{this.state.cars.prix}  DT/Jour</span></h6>
+          <button onClick={this.handleClick}>Retour</button>
           {this.props.auth.user ? (this.state.cars.user === this.props.auth.user._id ? this.agence() : this.client()) : this.client()}   
           </div>
           </div>

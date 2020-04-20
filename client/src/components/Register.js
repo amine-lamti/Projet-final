@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { setAlert, removeAlert } from '../actions/AlertActions';
-import { register } from '../actions/AuthActions';
+import { register, clearError } from '../actions/AuthActions';
 import { Link } from 'react-router-dom'
 
 
@@ -61,7 +61,7 @@ class Register extends Component {
             this.props.setAlert(nextProps.auth.error, 'danger', id)
             setTimeout(() => {
                 this.props.removeAlert(id)
-              //  this.props.clearError()
+                this.props.clearError()
             }, 5000);
         }
     }
@@ -128,4 +128,4 @@ const mapStateToProps = state =>{
         auth: state.auth
     }
 }
-export default connect(mapStateToProps, { setAlert, removeAlert, register })(Register)
+export default connect(mapStateToProps, { setAlert, removeAlert, register, clearError })(Register)

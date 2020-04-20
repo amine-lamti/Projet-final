@@ -4,6 +4,7 @@ import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer }
 
 const CarouselPage = () => {
   return (
+    <div>
     <MDBContainer>
       <MDBCarousel
         activeItem={1}
@@ -44,6 +45,7 @@ const CarouselPage = () => {
         </MDBCarouselInner>
       </MDBCarousel>
     </MDBContainer>
+    </div>
   );
 }
 
