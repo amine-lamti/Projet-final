@@ -58,7 +58,7 @@ class Clientcar extends Component {
         </div><div>
           <input value="client" id="Client" type="radio" class="form-check-input" name="type" onClick={this.handleChange} />
           <label htmlFor="Client"> Dacia
-</label>
+</label>  
         </div>
         <div>
           <input value="client" id="Client" type="radio" class="form-check-input" name="type" onClick={this.handleChange} />
