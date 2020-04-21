@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import {Modal,Button} from "react-bootstrap"
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import{reserver,getagencycar} from '../actions/CarActions'
+import{reserver} from '../actions/CarActions'
 import { connect } from 'react-redux'
+
+// CSS Modules, react-datepicker-cssmodules.css
+// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 class ResrverModal extends Component {
     constructor(props){
@@ -80,6 +83,7 @@ this.setState({
         selected={this.state.startDate}
         onChange={this.handleChange1}
       />
+      
             <h4>End date</h4>
 
       <DatePicker

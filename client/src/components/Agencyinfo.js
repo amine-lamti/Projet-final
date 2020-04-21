@@ -13,8 +13,8 @@ class Agencyinfo extends Component {
         return (
 <div className="agence">
   <div class="col-sm-4">
-  <div class="card text-dark bg-light">
-   <div class="card-header bg-primary text-center text-warning">
+  <div class="card text-warning bg-dark">
+   <div class="card-header bg-warning text-center text-dark">
        <h4>{this.props.agence.user.agence}</h4>
        </div>
       <div class="card-body ">
@@ -23,9 +23,9 @@ class Agencyinfo extends Component {
         <h6 class="card-title">{this.props.agence.user.lieu}</h6>
         <h6 class="card-title">{this.props.agence.user.téléphone}</h6>
       </div>
-     <div class="card-footer bg-primary border-warning text-center">
-      <Link to="#" class="btn btn-outline-light btn-sm">Modifier votre profil</Link> 
-      <Link to={`/carform/${5}`} class="btn btn-outline-light btn-sm">Ajouter une annonce</Link>
+     <div class="card-footer bg-warning border-warning text-center">
+      <Link to="#" class="btn btn-outline-dark btn-sm">Modifier votre profil</Link> 
+      <Link to={`/carform/${5}`} class="btn btn-outline-dark btn-sm">Ajouter une annonce</Link>
       </div>
     </div>
  </div>

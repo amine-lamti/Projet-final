@@ -30,7 +30,7 @@ class CarItem extends Component {
   componentWillReceiveProps(nextprops){
     console.log(this.props.auth.isAuthenticated)
     if (this.props.car) {
-      this.setState({cars: nextprops.car.filter(el => el._id == this.props.id)[0]});
+      this.setState({cars: nextprops.car.filter(el => el._id === this.props.id)[0]});
     }
   }
   
@@ -71,7 +71,7 @@ handleClick(e) {
         <div className="row">
        { this.state.cars ? <div className="col">
           <div className="cards">
-          <img className="ca" alt="100%x180" src={this.state.cars.image} style={{minHeight: "180px", minWidth: "100%", display: "block"}}/>
+          <img className="ca" alt="100%x180" src={this.state.cars.image} style={{height: "180px", width: "100%", display: "block"}}/>
           <div className="card-block">
           <h1 className="card-title">{this.state.cars.modele}</h1>
           <h6 className="card-title">{this.state.cars.energie}</h6>

@@ -97,6 +97,10 @@ class Navbar extends Component {
          </div>
     )
    
+    newMethod() {
+        return this;
+    }
+
     render() {
    return (
        <div>
