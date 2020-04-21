@@ -162,3 +162,16 @@
             background-attachment: fixed;
             margin-top: 30px;
         }
+        .search{
+            margin-top: 100px;
+            margin-left: 20px;
+        }
+        .accueil2{
+            display: flex;
+        }
+        .h4{
+            color: #D5AF54;
+        }
+        .carstype{
+            margin-left: 20px;
+        }

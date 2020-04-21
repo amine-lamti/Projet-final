@@ -57,7 +57,7 @@ handleClick(e) {
  <div className="row">         
 <div className="col">
 <div className="card card-block car-item-card">
-  <img className="card-img-top" alt="100%x180" src={this.state.cars.image} style={{height: "180px", width: "100%", display: "block"}}/>
+  <img className="card-img-top" alt="100%x180" src={this.state.cars.image} style={{height: "180px", width: "300px", display: "block"}}/>
   <div className="card-block">
     <h1 className="card-title">{this.state.cars.modele}</h1>
     <h6 className="card-text"><span className="prix">{this.state.cars.prix}  DT/Jour</span></h6>
