@@ -1,155 +1,164 @@
-.App {
-    margin: 0px;
-}
-
-.register {
-    width: 500px;
-    margin-left: 400px;
-    padding: 50px;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    -webkit-box-shadow: 10px 6px 25px -1px rgba(0, 0, 0, 0.74);
-    -moz-box-shadow: 10px 6px 25px -1px rgba(0, 0, 0, 0.74);
-    box-shadow: 10px 6px 25px -1px rgba(0, 0, 0, 0.74);
-}
-
-.login {
-    width: 500px;
-    margin-left: 400px;
-    padding: 50px;
-    margin-top: 100px;
-    -webkit-box-shadow: 10px 6px 25px -1px rgba(0, 0, 0, 0.74);
-    -moz-box-shadow: 10px 6px 25px -1px rgba(0, 0, 0, 0.74);
-    box-shadow: 10px 6px 25px -1px rgba(0, 0, 0, 0.74);
-}
-
-.pop {
-    display: flex;
-    justify-content: space-around;
-}
-
-.gris {
-    color: gray;
-}
-
-.prix {
-    color: red;
-}
-
-.pop1 {
-    display: flex;
-    justify-content: space-between;
-}
-
-.sign {
-    text-align: center;
-    color: #0069D9;
-    margin-bottom: 30px;
-}
-
-.card {
-    margin-top: 20px;
-}
-
-.car-item-card {
-    margin-right: 10px;
-}
-
-.google {
-    width: 400px;
-    margin-top: 200px;
-    margin-left: 40px;
-}
-
-.bob {
-    height: 250px;
-}
-
-.img {
-    width: 800px !important;
-}
-
-.footer {
-    background-color: #F5F4F1;
-    color: black;
-    text-align: center;
-    column-width: 600px;
-}
-
-.txt {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #0C0D05;
-    text-align: center;
-    color: white;
-}
-
-.col1 {
-    color: #3B5998;
-}
-
-.col2 {
-    color: #55ACEE
-}
-
-.col3 {
-    color: #DD4B39
-}
-
-.col4 {
-    color: #0082CA
-}
-
-.col5 {
-    color: #EC4A89;
-}
-
-.item {
-    margin-bottom: 20px;
-    margin-left: 95px;
-}
-
-.conseil {
-    display: flex;
-}
-
-.savoir {
-    margin-left: 300px;
-}
-
-.cars {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.agence {
-    margin-top: 100px;
-}
-
-.carou {
-    margin-right: 100px;
-    width: 100px;
-    filter: grayscale(1);
-}
-
-.scroll-image-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.849), rgba(0, 0, 0, 0.5)), url('https://www.bmw-m.com/content/dam/bmw/marketBMW_M/common/topics/magazine-article-pool/2019/m-portraits-7/bmw-m4-coupe-m-portraits-davs0-stage-01.jpg');
-    background-position: center;
-    background-size: cover;
-    height: 300px;
-    background-attachment: fixed;
-    margin-top: 30px;
-}
-
-.scroll-image-bg1 {
-    background-image: url('https://www.bimmerpost.com/storyimages/4c59d569-cd4f-ae6f.jpg');
-    background-position: center;
-    background-size: cover;
-    height: 300px;
-    background-attachment: fixed;
-    margin-top: 30px;
-}
+        .App {
+            margin: 0px;
+        }
+        
+        .register {
+            width: 500px;
+            margin-left: 400px;
+            padding: 50px;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            -webkit-box-shadow: 10px 6px 25px -1px rgba(0, 0, 0, 0.74);
+            -moz-box-shadow: 10px 6px 25px -1px rgba(0, 0, 0, 0.74);
+            box-shadow: 10px 6px 25px -1px rgba(0, 0, 0, 0.74);
+        }
+        
+        .login {
+            width: 500px;
+            margin-left: 400px;
+            padding: 50px;
+            margin-top: 100px;
+            -webkit-box-shadow: 10px 6px 25px -1px rgba(0, 0, 0, 0.74);
+            -moz-box-shadow: 10px 6px 25px -1px rgba(0, 0, 0, 0.74);
+            box-shadow: 10px 6px 25px -1px rgba(0, 0, 0, 0.74);
+        }
+        
+        .pop {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .gris {
+            color: gray;
+        }
+        
+        .prix {
+            color: red;
+        }
+        
+        .pop1 {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .sign {
+            text-align: center;
+            color: #0069D9;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            margin-top: 20px;
+        }
+        
+        .car-item-card {
+            margin-right: 10px;
+        }
+        
+        .google {
+            width: 400px;
+            margin-top: 200px;
+            margin-left: 40px;
+        }
+        
+        .image {
+            margin-left: 100px;
+            margin-bottom: 100px;
+        }
+        
+        .bob {
+            height: 200px;
+        }
+        
+        .footer {
+            background-color: #F5F4F1;
+            color: black;
+            text-align: center;
+            column-width: 600px;
+        }
+        
+        .img1 {
+            width: 100%;
+        }
+        
+        .txt {
+            text-align: center;
+            color: black;
+            margin: 50px;
+            padding: 50px;
+        }
+        
+        .txt1 {
+            color: #D5AF54;
+        }
+        
+        .col1 {
+            color: #3B5998;
+        }
+        
+        .col2 {
+            color: #55ACEE
+        }
+        
+        .col3 {
+            color: #DD4B39
+        }
+        
+        .col4 {
+            color: #0082CA
+        }
+        
+        .col5 {
+            color: #EC4A89;
+        }
+        
+        .item {
+            margin-bottom: 20px;
+            margin-left: 95px;
+        }
+        
+        .conseil {
+            display: flex;
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        .savoir {
+            margin-left: 400px;
+            margin-right: 70px;
+        }
+        
+        .cars {
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .agence {
+            margin-top: 100px;
+        }
+        
+        .carou {
+            margin-right: 100px;
+            width: 100px;
+            filter: grayscale(1);
+        }
+        
+        .scroll-image-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://www.bmw-m.com/content/dam/bmw/marketBMW_M/common/topics/magazine-article-pool/2019/m-portraits-7/bmw-m4-coupe-austin-yellow-davs0-si.jpg');
+            background-position: center;
+            background-size: cover;
+            height: 300px;
+            background-attachment: fixed;
+            margin-top: 30px;
+        }
+        
+        .scroll-image-bg1 {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBOX8oJ.img?h=630&w=1200&m=6&q=60&o=t&l=f&f=jpg&x=1085&y=816');
+            background-position: center;
+            background-size: cover;
+            height: 300px;
+            background-attachment: fixed;
+            margin-top: 30px;
+        }

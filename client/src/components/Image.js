@@ -9,10 +9,12 @@ class Image extends Component {
         return (
             <div>
               <div className="txt">
-                <h1>Effectuez votre réservation ou déposer votre annonce en quelques clics !</h1>
+                <h1 className="txt1">Effectuez votre réservation ou déposer votre annonce en quelques clics !</h1>
+                <hr/>
                 <p>C'est un site web, qui regroupe touts les agences de location véhicules dans une région. Ce site porte aussi toutes les informations des agences (Adresses, Téléphones, email, site web . . .) et il permet de faire une réservation des véhicules en ligne</p>
               </div>
-                <CardDeck style={{width: '100%', margin: '0'}}>
+     <div className="image">
+                <CardDeck style={{width: '90%', margin:'0px'}}>
   <Card>
     <Card.Img variant="top" src="https://cdn2.webmanagercenter.com/wmc/wp-content/uploads/2019/06/federation-location-voitures.jpg" />
     <Card.Body>
@@ -50,6 +52,7 @@ class Image extends Component {
     </Card.Footer>
   </Card>
 </CardDeck>
+</div>
             </div>
         );
     }

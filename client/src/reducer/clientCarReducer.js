@@ -1,4 +1,4 @@
-import {GET_CLIENTCAR ,UPDATE_CAR,CLEAR_CURRENTCAR} from "../actions/types"
+import {GET_CLIENTCAR, CLEAR_CURRENTCAR} from "../actions/types"
 const initialestate = {
     cars:[],
     
