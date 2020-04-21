@@ -88,7 +88,9 @@ Car.findById(req.params.id)
 })
 router.put("/api/:id",auth,(req,res)=>{
     Car.findByIdAndUpdate(req.params.id,{$push:{reservation:{
-        user:req.user.id,
+        fullname:req.body.fullname,
+        email:req.body.email,
+        téléphone:req.body.téléphone,
         startdate:req.body.startdate,
         enddate:req.body.enddate,
 

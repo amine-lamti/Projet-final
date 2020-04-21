@@ -4,6 +4,7 @@ import { saved, deletecar, getclientcar } from '../actions/CarActions'
 import { loadUser } from "../actions/AuthActions";
 import { Link } from "react-router-dom"
 import ReactCardFlip from 'react-card-flip';
+import ResrverModal from './Modal'
 
 
 
@@ -17,6 +18,7 @@ class CarItem extends Component {
     };
     this.handleClick = this.handleClick.bind(this);
   }
+  
   componentWillMount(){
     //this.setState({cars:this.props.car.filter(el => el._id== this.props.match.params.id)[0]})
     this.props.getclientcar()
@@ -31,7 +33,7 @@ class CarItem extends Component {
       this.setState({cars: nextprops.car.filter(el => el._id == this.props.id)[0]});
     }
   }
-  client = () => (<button>Réserver</button>)
+  
 
 
 
@@ -77,7 +79,7 @@ handleClick(e) {
           <h6 className="card-title">{this.state.cars.téléphone}</h6>
           <h6 className="card-title"><span className="prix">{this.state.cars.prix}  DT/Jour</span></h6>
           <button onClick={this.handleClick}>Retour</button>
-          {this.props.auth.user ? (this.state.cars.user === this.props.auth.user._id ? this.agence() : this.client()) : this.client()}   
+          {this.props.auth.user ? (this.state.cars.user === this.props.auth.user._id ? this.agence() : <ResrverModal id={this.state.cars._id}/>) : <ResrverModal id={this.state.cars._id}/>}   
           </div>
           </div>
           </div> : "...Loading"}    

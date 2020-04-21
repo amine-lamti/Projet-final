@@ -32,7 +32,7 @@ router.post('/', [
       .then(user => {
           if(!user){
               
-              return res.json({error: "Please Register Before!"})             
+              return res.json({msg: "Please Register Before!"})             
           }else{
      
               bcrypt.compare(password, user.password, (err, isMatch) => {
@@ -49,7 +49,7 @@ router.post('/', [
                           res.json({token})
                       })
                   }else{
-                      return res.json({error: "Wrong Password!"})
+                      return res.json({msg: "Wrong Password!"})
                   }
               })
           }

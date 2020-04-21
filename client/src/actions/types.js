@@ -10,6 +10,7 @@ export const USER_LOADED = "USER_LOADED"
 export const SET_ALERT = "SET_ALERT" 
 export const REMOVE_ALERT = "REMOVE_ALERT"
 
+export const EDIT_RESREVATION = "EDIT_RESREVATION"
 
 export const DELETE_CAR = "DELETE_CAR"
 export const UPDATE_CAR = "UPDATE_CAR"
