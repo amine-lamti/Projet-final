@@ -1,4 +1,4 @@
-import{GET_CLIENTCAR,GET_AGENCYCAR,CLEAR_CURRENTCAR,ADD_CAR,CAR_ERR,DELETE_CAR,UPDATE_CAR,CLEARSAVED_CAR,SAVED_CAR} from "./types"
+import{GET_CLIENTCAR,GET_AGENCYCAR,CLEAR_CURRENTCAR,ADD_CAR,CAR_ERR,DELETE_CAR,EDIT_RESREVATION,UPDATE_CAR,CLEARSAVED_CAR,SAVED_CAR} from "./types"
 import axios from 'axios'
 
 export const getclientcar=()=>dispatch=>{
@@ -91,6 +91,22 @@ export const clearsave=()=>dispatch=>{
         type:CLEARSAVED_CAR,
         
     })
+}
+export const reserver=(reservation)=>dispatch=>{
+    const config = {
+        headers: {
+            'Content-type':'application/json'
+                }
+    }
+    axios.put(`/api/agencycar/api/${reservation.id}`,reservation.res,config)
+    .then(res=>dispatch({
+        type:EDIT_RESREVATION,
+        payload:reservation
+    }))
+    .catch(err=>dispatch({
+        type:CAR_ERR,
+        payload:err.response.msg
+    }))
 }
 
 

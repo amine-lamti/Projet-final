@@ -1,6 +1,6 @@
 import {
     GET_AGENCYCAR, CLEAR_CURRENTCAR, ADD_CAR, CAR_ERR, SAVED_CAR, DELETE_CAR,
-    UPDATE_CAR,CLEARSAVED_CAR
+    UPDATE_CAR,CLEARSAVED_CAR,EDIT_RESREVATION
 } from "../actions/types"
 
 const initialestate = {
@@ -24,6 +24,7 @@ const Agencyreducer = (state = initialestate, action) => {
                 ...state,
                 cars:[]
             }
+           
         
         case CAR_ERR:
             return {
@@ -35,6 +36,7 @@ const Agencyreducer = (state = initialestate, action) => {
                 ...state,
                 saved: action.payload.cars
             }
+            
         case DELETE_CAR:
             return {
                 ...state,

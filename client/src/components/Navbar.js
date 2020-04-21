@@ -100,7 +100,7 @@ class Navbar extends Component {
     render() {
    return (
        <div>
-       {!this.props.auth.error ? this.props.auth.isAuthenticated ? this.userConnected(): this.guest() : this.guest()}  
+       {this.props.auth.isAuthenticated ? this.userConnected(): this.guest() }  
       </div>
    );
   }

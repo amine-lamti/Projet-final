@@ -19,13 +19,15 @@ class Login extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if(!nextProps.auth.error){             
+        if(nextProps.auth.isAuthenticated){             
             this.props.history.push('/') }
             if(nextProps.auth.error === 'Please Register Before!' || nextProps.auth.error === 'Wrong Password!' )
             { let id = uuidv4()             
         this.props.setAlert(nextProps.auth.error, 'warning', id)             
         setTimeout(() => {                 
-            this.props.removeAlert(id)                 
+            this.props.removeAlert(id) 
+            this.props.clearError()
+                
         }, 5000);         
     }
     
@@ -39,10 +41,8 @@ class Login extends Component {
                 this.props.removeAlert(id)
             }, 5000);
         }else{
-            if(this.props.auth.error){ 
-                this.props.login({  email: this.state.email, password: this.state.password  })  
-            this.props.clearError()
-        }else{this.props.login({  email: this.state.email,  password: this.state.password    })  }  
+            
+        this.props.login({  email: this.state.email,  password: this.state.password    })  
             
         } 
     }
