@@ -50,18 +50,18 @@ handleClick(e) {
 
   render() {
     return (     
-      <div>
+      <div className="voitue">
         {this.state.cars ? 
  <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">  
 
  <div className="row">         
 <div className="col">
 <div className="card card-block car-item-card">
-  <img className="card-img-top" alt="100%x180" src={this.state.cars.image} style={{height: "180px", width: "100%", display: "block"}}/>
+  <img className="card-img-top" alt="100%x180" src={this.state.cars.image} style={{height: "150px", width: "200px", display: "block"}}/>
   <div className="card-block">
-    <h1 className="card-title">{this.state.cars.modele}</h1>
+    <h4 className="card-title">{this.state.cars.modele}</h4>
     <h6 className="card-text"><span className="prix">{this.state.cars.prix}  DT/Jour</span></h6>
-    {!this.props.auth.isAuthenticated ? <button><Link to="/login">Voir</Link></button> : <button onClick={this.handleClick}>Voir</button> }
+    {!this.props.auth.isAuthenticated ? <Link to="/login"><button className="voir btn btn-outline-dark border-warning bg-warning btn-sm"><i class="fas fa-angle-double-right"> Voir</i></button></Link> : <button className="voir btn btn-outline-dark border-warning bg-warning btn-sm" onClick={this.handleClick}><i class="fas fa-angle-double-right"> Voir</i></button> }
   </div>
   </div>
 </div>
@@ -70,16 +70,18 @@ handleClick(e) {
         
         <div className="row">
        { this.state.cars ? <div className="col">
-          <div className="cards">
-          <img className="ca" alt="100%x180" src={this.state.cars.image} style={{height: "180px", width: "100%", display: "block"}}/>
+          <div className="cards card card-block car-item-card">
+          <img className="card-img-top" alt="100%x180" src={this.state.cars.image} style={{height: "180px", width: "100%", display: "block"}}/>
           <div className="card-block">
-          <h1 className="card-title">{this.state.cars.modele}</h1>
+          <h4 className="card-title">{this.state.cars.modele}</h4>
           <h6 className="card-title">{this.state.cars.energie}</h6>
           <h6 className="card-title">{this.state.cars.couleur}</h6>
           <h6 className="card-title">{this.state.cars.téléphone}</h6>
-          <h6 className="card-title"><span className="prix">{this.state.cars.prix}  DT/Jour</span></h6>
-          <button onClick={this.handleClick}>Retour</button>
+          <h6 className="card-title h4"><span className="prix">{this.state.cars.prix}  DT/Jour</span></h6>
+          <div className="selem">
+          <button class="btn btn-outline-dark btn-sm" onClick={this.handleClick}><i class="fas fa-angle-double-left"> Retour</i></button>
           {this.props.auth.user ? (this.state.cars.user === this.props.auth.user._id ? this.agence() : <ResrverModal id={this.state.cars._id}/>) : <ResrverModal id={this.state.cars._id}/>}   
+          </div>
           </div>
           </div>
           </div> : "...Loading"}    

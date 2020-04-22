@@ -9,7 +9,7 @@ class Image extends Component {
         return (
             <div>
               <div className="txt">
-                <h1 className="txt1">Effectuez votre réservation ou déposer votre annonce en quelques clics !</h1>
+                <h3 className="txt1">Effectuez votre réservation ou déposer votre annonce en quelques clics !</h3>
                 <hr/>
                 <p>C'est un site web, qui regroupe touts les agences de location véhicules dans une région. Ce site porte aussi toutes les informations des agences (Adresses, Téléphones, email, site web . . .) et il permet de faire une réservation des véhicules en ligne</p>
               </div>
@@ -24,7 +24,7 @@ class Image extends Component {
       </Card.Text>
     </Card.Body>
     <Card.Footer>   
-      {this.props.auth.isAuthenticated ? <Link class="nav-link border border-dark text-dark" type="button" to="/cars" data-toggle="modal" data-target="#myModal">Réserver gratuitement</Link> : <Link class="nav-link border border-dark text-dark" type="button" to="/login" data-toggle="modal" data-target="#myModal">Réserver gratuitement</Link>}
+      {this.props.auth.isAuthenticated ? <Link class="btn btn-outline-warning btn-sm" type="button" to="/cars" data-toggle="modal" data-target="#myModal">Réserver gratuitement</Link> : <Link class="btn btn-outline-warning btn-sm" type="button" to="/login" data-toggle="modal" data-target="#myModal">Réserver gratuitement</Link>}
     </Card.Footer>
   </Card>
   <Card>
@@ -36,7 +36,7 @@ class Image extends Component {
       </Card.Text>
     </Card.Body>
     <Card.Footer>
-    {this.props.auth.isAuthenticated ? <Link class="nav-link border border-warning text-warning" type="button" to="/monagence" data-toggle="modal" data-target="#myModal">Déposer votre annonce gratuitement</Link> : <Link class="nav-link border border-warning text-warning" type="button" to="/register" data-toggle="modal" data-target="#myModal">Déposer votre annonce gratuitement</Link>}
+    {this.props.auth.isAuthenticated ? <Link class="btn btn-outline-dark btn-sm" type="button" to="/monagence" data-toggle="modal" data-target="#myModal">Déposer votre annonce gratuitement</Link> : <Link class="btn btn-outline-dark btn-sm" type="button" to="/register" data-toggle="modal" data-target="#myModal">Déposer votre annonce gratuitement</Link>}
     </Card.Footer>
   </Card>
   <Card>
@@ -48,7 +48,7 @@ class Image extends Component {
       </Card.Text>
     </Card.Body>
     <Card.Footer>
-    {this.props.auth.isAuthenticated ? <Link class="nav-link border border-dark text-dark" type="button" to="/cars" data-toggle="modal" data-target="#myModal">Réserver gratuitement</Link> : <Link class="nav-link border border-dark text-dark" type="button" to="/login" data-toggle="modal" data-target="#myModal">Réserver gratuitement</Link>}
+    {this.props.auth.isAuthenticated ? <Link class="btn btn-outline-warning btn-sm" type="button" to="/cars" data-toggle="modal" data-target="#myModal">Réserver gratuitement</Link> : <Link class="btn btn-outline-warning btn-sm" type="button" to="/login" data-toggle="modal" data-target="#myModal">Réserver gratuitement</Link>}
     </Card.Footer>
   </Card>
 </CardDeck>

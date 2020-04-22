@@ -33,7 +33,7 @@
         }
         
         .prix {
-            color: red;
+            color: #D5AF54;
         }
         
         .pop1 {
@@ -130,9 +130,16 @@
         
         .cars {
             margin-top: 100px;
+            margin-left: 80px;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             flex-wrap: wrap;
+        }
+        
+        .voiture {
+            -webkit-box-shadow: 6px 9px 13px -8px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 6px 9px 13px -8px rgba(0, 0, 0, 0.75);
+            box-shadow: 6px 9px 13px -8px rgba(0, 0, 0, 0.75);
         }
         
         .agence {
@@ -161,4 +168,35 @@
             height: 300px;
             background-attachment: fixed;
             margin-top: 30px;
+        }
+        
+        .search {
+            margin-top: 100px;
+            margin-left: 20px;
+        }
+        
+        .accueil2 {
+            display: flex;
+        }
+        
+        .h4 {
+            color: #D5AF54;
+        }
+        
+        .carstype {
+            margin-left: 20px;
+        }
+        
+        .calendar {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .selem {
+            display: flex;
+            margin-left: 110px;
+        }
+        
+        .voir {
+            margin-left: 130px;
         }
