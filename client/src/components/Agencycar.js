@@ -15,8 +15,8 @@ class Agencycar extends Component {
   render() {
     return (
       <div className="cars">
-        {this.props.car.map((el) => (
-          <CarItem id={el._id} />
+        {this.props.car.map((el,i) => (
+          <CarItem info={el} key={i} />
         ))}
       </div>
     );

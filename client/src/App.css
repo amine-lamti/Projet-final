@@ -169,10 +169,14 @@
             background-attachment: fixed;
             margin-top: 30px;
         }
+        .search{
+            margin-top: 50px;
         
         .search {
             margin-top: 100px;
             margin-left: 20px;
+            padding-right: 40px;
+            padding-top: 10px;
         }
         
         .accueil2 {
@@ -186,6 +190,25 @@
         .carstype {
             margin-left: 20px;
         }
+
+        .flip1{
+            color: #D5AF54;
+        }
+        .prix{
+            color: slategrey;
+        }
+        .flip{
+            color: slategrey;
+
+        }
+        .btn{
+            padding-right: 40px;
+            color: #D5AF54;
+
+        }
+        .nav{
+            margin-left: 10px;
+
         
         .calendar {
             display: flex;
@@ -199,4 +222,5 @@
         
         .voir {
             margin-left: 130px;
+
         }
