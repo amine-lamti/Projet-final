@@ -27,12 +27,12 @@ class CarItem extends Component {
       this.props.loadUser()
   }
 }
-  componentWillReceiveProps(nextprops){
+  /**componentWillReceiveProps(nextprops){
     console.log(this.props.auth.isAuthenticated)
     if (this.props.car) {
       this.setState({cars: nextprops.car.filter(el => el._id === this.props.id)[0]});
     }
-  }
+  }*/
   
 
 
@@ -51,17 +51,17 @@ handleClick(e) {
   render() {
     return (     
       <div>
-        {this.state.cars ? 
+      
  <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">  
 
  <div className="row">         
 <div className="col">
 <div className="card card-block car-item-card">
-  <img className="card-img-top" alt="100%x180" src={this.state.cars.image} style={{height: "180px", width: "300px", display: "block"}}/>
+  <img className="card-img-top" alt="100%x180" src={this.props.info.image} style={{height: "180px", width: "300px", display: "block"}}/>
   <div className="card-block">
-    <h1 className="card-title">{this.state.cars.modele}</h1>
-    <h6 className="card-text"><span className="prix">{this.state.cars.prix}  DT/Jour</span></h6>
-    {!this.props.auth.isAuthenticated ? <button><Link to="/login">Voir</Link></button> : <button onClick={this.handleClick}>Voir</button> }
+    <h1 className="card-title flip1" >{this.props.info.modele}</h1>
+    <h6 className="card-text"><span className="prix">{this.props.info.prix}  DT/Jour</span></h6>
+    {!this.props.auth.isAuthenticated ? <Link to="/login" class="btn btn-outline-dark btn-sm">Voir plus</Link> : <Link onClick={this.handleClick} to="#" class="btn btn-outline-dark btn-sm">Voir plus</Link> }
   </div>
   </div>
 </div>
@@ -69,23 +69,25 @@ handleClick(e) {
 
         
         <div className="row">
-       { this.state.cars ? <div className="col">
+        <div className="col">
           <div className="cards">
-          <img className="ca" alt="100%x180" src={this.state.cars.image} style={{height: "180px", width: "100%", display: "block"}}/>
+          <img className="ca" alt="100%x180" src={this.props.info.image} style={{height: "180px", width: "300px", display: "block"}}/>
           <div className="card-block">
-          <h1 className="card-title">{this.state.cars.modele}</h1>
-          <h6 className="card-title">{this.state.cars.energie}</h6>
-          <h6 className="card-title">{this.state.cars.couleur}</h6>
-          <h6 className="card-title">{this.state.cars.téléphone}</h6>
-          <h6 className="card-title"><span className="prix">{this.state.cars.prix}  DT/Jour</span></h6>
+          <h1 className="card-title flip1">{this.props.info.modele}</h1>
+          <h6 className="card-title flip">{this.props.info.energie}</h6>
+          <h6 className="card-title flip">{this.props.info.couleur}</h6>
+          <h6 className="card-title flip">{this.props.info.téléphone}</h6>
+          <h6 className="card-title flip1"><span className="prix">{this.props.info.prix}  DT/Jour</span></h6>
+         <div className="">
           <button onClick={this.handleClick}>Retour</button>
-          {this.props.auth.user ? (this.state.cars.user === this.props.auth.user._id ? this.agence() : <ResrverModal id={this.state.cars._id}/>) : <ResrverModal id={this.state.cars._id}/>}   
+          {this.props.auth.user ? (this.state.cars.user === this.props.auth.user._id ? this.agence() : <ResrverModal id={this.props.info._id}/>) : <ResrverModal  id={this.props.info._id}/>}   
           </div>
           </div>
-          </div> : "...Loading"}    
+          </div>
+          </div>    
         </div>
     
-        </ReactCardFlip> : "...Loading"}
+        </ReactCardFlip> 
      </div>
     )
   }

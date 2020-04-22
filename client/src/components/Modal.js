@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Modal,Button} from "react-bootstrap"
+import {Modal} from "react-bootstrap"
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import{reserver} from '../actions/CarActions'
@@ -56,48 +56,52 @@ this.setState({
     render() {
         return (
             <div>
-                <Button variant="primary" onClick={this.handleShow}>
-                reserver
-      </Button>
+                <button class="btn btn-outline-warning btn-sm" onClick={this.handleShow}>
+                Réserver
+      </button>
 
       <Modal show={this.state.show} onHide={this.handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>resrever gratuitement</Modal.Title>
+          <Modal.Title>Réserver gratuitement</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <div className="form-group">
-                    <label>fullname</label>
-                    <input type="text" className="form-control" placeholder="Enter fullname" name="fullname" value={this.state.couleur} onChange={this.handleChange}/>
+                    <label>Nom/Prénom</label>
+                    <input type="text" className="form-control" placeholder="Enter fullname" name="fullname" value={this.state.fullname} onChange={this.handleChange}/>
                 </div>
                 <div className="form-group">
-                <label>email</label>
-                    <input type="text" className="form-control" placeholder="Enter email" name="email" value={this.state.couleur} onChange={this.handleChange}/>
+                <label>Email</label>
+                    <input type="text" className="form-control" placeholder="Enter email" name="email" value={this.state.email} onChange={this.handleChange}/>
                 </div>
                 <div className="form-group">
-                <label>téléphone</label>
+                <label>Téléphone</label>
                     <input type="text" className="form-control" placeholder="Enter téléphone" name="téléphone" value={this.state.téléphone} onChange={this.handleChange}/>
                 </div>
-                <div>
-      <h4>Start Date</h4>
+                
+     <div className="calendar">
+      <div>
+      <h6>Date de départ</h6>
       <DatePicker
         selected={this.state.startDate}
         onChange={this.handleChange1}
       />
-      
-            <h4>End date</h4>
-
+      </div>
+       <div>
+       <h6>Date de retour</h6>
       <DatePicker
         selected={this.state.endDate}
         onChange={this.handleChange2}
-      /></div>
+      />
+      </div>
+      </div>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={this.handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={this.handleClose}>
-          reserver
-          </Button>
+        <Modal.Footer>      
+          <button class="btn btn-outline-dark btn-sm" onClick={this.handleClose}>
+            Fermer
+          </button>
+          <button class="btn btn-outline-warning btn-sm" onClick={this.handleClose}>
+          Réserver
+          </button>
         </Modal.Footer>
       </Modal>
             </div>
