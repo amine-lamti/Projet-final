@@ -34,7 +34,7 @@ const Agencyreducer = (state = initialestate, action) => {
         case SAVED_CAR:
             return {
                 ...state,
-                saved: action.payload.cars
+                saved: action.payload
             }
             
         case DELETE_CAR:

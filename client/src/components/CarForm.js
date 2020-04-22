@@ -22,7 +22,7 @@ class CarForm extends Component {
 
 
     componentDidMount() {
-        if(this.props.save) {
+        if(this.props.save) { 
             this.setState(this.props.cars.filter(el => String(el._id) === this.props.match.params.id)[0])}      
     }
     

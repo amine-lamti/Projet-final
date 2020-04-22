@@ -40,8 +40,29 @@ class ResrverModal extends Component {
         handleShow=()=>{
             this.setState({show:true})
         }
+        handleClose1=()=>{
+this.setState({show:false})
+this.setState({
+  show:false,
+  fullname:"",
+  email:"",
+  téléphone:"",
+  startDate: new Date(),
+  endDate: new Date()
+
+})
+}
         handleClose=()=>{
-            this.props.reserver({res:this.state,id:this.props.id})
+            this.props.reserver({
+              fullname:this.state.fullname,
+    email:this.state.email,
+    téléphone:this.state.téléphone,
+    startDate: this.state.startDate,
+    endDate: this.state.endDate,
+    id:this.props.info._id,
+    modele:this.props.info.modele,
+    image:this.props.info.image
+            })
 this.setState({show:false})
 this.setState({
     show:false,
@@ -68,22 +89,22 @@ this.setState({
         <div className="form-group">
                     <label>Nom/Prénom</label>
                    
-                    <input type="text" className="form-control" placeholder="Enter fullname" name="fullname" value={this.state.couleur} onChange={this.handleChange}/>
+                    <input type="text" className="form-control" placeholder="Enter fullname" name="fullname"  onChange={this.handleChange}/>
                 </div>
                 <div className="form-group">
                 <label>Email</label>
-                    <input type="text" className="form-control" placeholder="Enter email" name="email" value={this.state.couleur} onChange={this.handleChange}/>
+                    <input type="text" className="form-control" placeholder="Enter email" name="email"  onChange={this.handleChange}/>
                 </div>
                 <div className="form-group">
                 <label>Téléphone</label>
-                    <input type="text" className="form-control" placeholder="Enter téléphone" name="téléphone" value={this.state.téléphone} onChange={this.handleChange}/>
+                    <input type="text" className="form-control" placeholder="Enter téléphone" name="téléphone"  onChange={this.handleChange}/>
                 </div>
                 
      <div className="calendar">
       <div>
       <h6>Date de départ</h6>
       <DatePicker
-        selected={this.state.startDate}
+        selected={this.state.startDate}  
         onChange={this.handleChange1}
       />
       </div>
@@ -97,7 +118,7 @@ this.setState({
       </div>
         </Modal.Body>
         <Modal.Footer>      
-          <button class="btn btn-outline-dark btn-sm" onClick={this.handleClose}>
+          <button class="btn btn-outline-dark btn-sm" onClick={this.handleClose1}>
             Fermer
           </button>
           <button class="btn btn-outline-warning btn-sm" onClick={this.handleClose}>

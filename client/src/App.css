@@ -171,7 +171,7 @@
         }
        
         .search {
-            margin-top: 100px;
+            margin-top: 50px;
             margin-left: 20px;
             padding-right: 40px;
             padding-top: 10px;
@@ -220,3 +220,30 @@
             margin-left: 130px;
 
         }
+        .agenceprofil{
+            display: flex;
+        }
+        .div{
+            overflow: scroll;
+            height: 250px;
+            margin-top: 20px;
+            width: 900px;
+        }
+        .sm{
+            padding-right: 200px;
+            margin-right: 0px;
+            margin-left: 100px;
+            margin-top: 25px;
+            width: 500px;
+        }
+        .h3{ 
+            color: #D5AF54;
+            margin-top: 60px;
+            margin-left: 50px;
+            padding-bottom: 10px;
+        }
+       .reser{
+           height: 200px;
+           width: 300px ;
+       }
+        

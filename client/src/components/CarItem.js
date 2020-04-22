@@ -38,8 +38,8 @@ class CarItem extends Component {
 
 
   agence = () => (<div>
-    <button onClick={() => this.props.saved(this.state)}><Link to={`/carform/${this.state.cars._id}`}>Editer</Link></button>
-    <button onClick={() => this.props.deletecar(this.state.cars._id)}>Supprimer</button></div>)
+    <button onClick={() => this.props.saved(this.props.info)}><Link to={`/carform/${this.props.info._id}`}>Editer</Link></button>
+    <button onClick={() => this.props.deletecar(this.props.info._id)}>Supprimer</button></div>)
 
 
 handleClick(e) {
@@ -83,7 +83,7 @@ handleClick(e) {
           <h6 className="card-title flip1"><span className="prix">{this.props.info.prix}  DT/Jour</span></h6>
          <div className="">
           <button onClick={this.handleClick}>Retour</button>
-          {this.props.auth.user ? (this.state.cars.user === this.props.auth.user._id ? this.agence() : <ResrverModal id={this.props.info._id}/>) : <ResrverModal  id={this.props.info._id}/>}   
+          {this.props.auth.user ? (this.props.info.user === this.props.auth.user._id ? this.agence() : <ResrverModal info={this.props.info}/>) : <ResrverModal  info={this.props.info}/>}   
           </div>
           </div>
           </div>

@@ -91,8 +91,11 @@ router.put("/api/:id",auth,(req,res)=>{
         fullname:req.body.fullname,
         email:req.body.email,
         téléphone:req.body.téléphone,
-        startdate:req.body.startdate,
-        enddate:req.body.enddate,
+        startDate:req.body.startDate,
+        modele:req.body.modele,
+        image:req.body.image,
+        endDate:req.body.endDate,
+
 
     }}},(err,data)=>{
         if(err) throw err
