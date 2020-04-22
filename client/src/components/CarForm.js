@@ -61,7 +61,7 @@ class CarForm extends Component {
                     <input type="text" className="form-control" placeholder="Enter image" name="image" value={this.state.image} onChange={this.handleChange}/>
                 </div>
                 <div className="form-group">
-                    <label>Prix<span className="gris">  (DT/JOUR)</span></label>
+                    <label>Prix<span className="gris">  (DT/Jour)</span></label>
                     <input type="text" className="form-control" placeholder="Enter prix" name="prix" value={this.state.prix} onChange={this.handleChange}/>
                 </div>
 

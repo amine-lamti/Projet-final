@@ -31,7 +31,7 @@ class Clientcar extends Component {
   render() {
     return (<div className="accueil2">
       <div className="search">
-        <h4 className="h4">prix entre</h4>
+        <h4 className="h4">Prix entre</h4>
         <div className="form-group">
           <label>Min:</label>
           <input type="text" className="form-control" name="max" value={this.state.max} onChange={this.handleChange} />
@@ -40,25 +40,24 @@ class Clientcar extends Component {
           <label>Max:</label>
           <input type="text" className="form-control" name="min" value={this.state.min} onChange={this.handleChange} />
         </div>
+        <br/>
         <h4  className="h4" >Fabricants</h4>
-
         <div className="carstype">
         <div>
           <input value="client" id="Client" type="radio" class="form-check-input" name="type" onClick={this.handleChange} />
-          <label htmlFor="Client">fiat</label>
+          <label htmlFor="Client">Fiat</label>
         </div><div>
           <input value="client" id="Client" type="radio" class="form-check-input" name="type" onClick={this.handleChange} />
-          <label htmlFor="Client">bmw</label>
+          <label htmlFor="Client">BMW</label>
         </div><div>
           <input value="client" id="Client" type="radio" class="form-check-input" name="type" onClick={this.handleChange} />
-          <label htmlFor="Client">mercedes</label>
+          <label htmlFor="Client">Mercedes</label>
         </div><div>
           <input value="client" id="Client" type="radio" class="form-check-input" name="type" onClick={this.handleChange} />
           <label htmlFor="Client">Audi</label>
         </div><div>
           <input value="client" id="Client" type="radio" class="form-check-input" name="type" onClick={this.handleChange} />
-          <label htmlFor="Client"> Dacia
-</label>  
+          <label htmlFor="Client">Dacia</label> 
         </div>
         <div>
           <input value="client" id="Client" type="radio" class="form-check-input" name="type" onClick={this.handleChange} />
@@ -82,25 +81,22 @@ class Clientcar extends Component {
         </div>
         <div>
           <input value="client" id="Client" type="radio" class="form-check-input" name="type" onClick={this.handleChange} />
-          <label htmlFor="Client"> Chevrolet
-</label>
+          <label htmlFor="Client">Chevrolet</label>
         </div><div>
           <input value="client" id="Client" type="radio" class="form-check-input" name="type" onClick={this.handleChange} />
-          <label htmlFor="Client"> Ford
-</label>
+          <label htmlFor="Client">Ford</label>
+
         </div><div>
           <input value="client" id="Client" type="radio" class="form-check-input" name="type" onClick={this.handleChange} />
           <label htmlFor="Client">Nissan</label>
         </div>
         <div>
           <input value="client" id="Client" type="radio" class="form-check-input" name="type" onClick={this.handleChange} />
-          <label htmlFor="Client"> Suzuki
-</label>
+          <label htmlFor="Client">Suzuki</label>
         </div><div>
           <input value="client" id="Client" type="radio" class="form-check-input" name="type" onClick={this.handleChange} />
           <label htmlFor="Client">Volkswagen</label>
-        </div>
-        
+        </div>      
         </div>
 
 
