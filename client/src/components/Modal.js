@@ -72,6 +72,11 @@ this.setState({
                 <div className="form-group">
                 <label>Email</label>
                     <input type="text" className="form-control" placeholder="Enter email" name="email" value={this.state.email} onChange={this.handleChange}/>
+                    <input type="text" className="form-control" placeholder="Enter fullname" name="fullname" value={this.state.couleur} onChange={this.handleChange}/>
+                </div>
+                <div className="form-group">
+                <label>Email</label>
+                    <input type="text" className="form-control" placeholder="Enter email" name="email" value={this.state.couleur} onChange={this.handleChange}/>
                 </div>
                 <div className="form-group">
                 <label>Téléphone</label>
