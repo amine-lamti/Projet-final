@@ -50,8 +50,10 @@ handleClick(e) {
 
   render() {
     return (     
-      <div>
       
+      <div className="voitue">
+        
+
  <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">  
 
  <div className="row">         
@@ -61,15 +63,16 @@ handleClick(e) {
   <div className="card-block">
     <h1 className="card-title flip1" >{this.props.info.modele}</h1>
     <h6 className="card-text"><span className="prix">{this.props.info.prix}  DT/Jour</span></h6>
-    {!this.props.auth.isAuthenticated ? <Link to="/login" class="btn btn-outline-dark btn-sm">Voir plus</Link> : <Link onClick={this.handleClick} to="#" class="btn btn-outline-dark btn-sm">Voir plus</Link> }
+  
+    {!this.props.auth.isAuthenticated ? <Link to="/login"><button className="voir btn btn-outline-dark border-warning bg-warning btn-sm"><i class="fas fa-angle-double-right"> Voir</i></button></Link> : <button className="voir btn btn-outline-dark border-warning bg-warning btn-sm" onClick={this.handleClick}><i class="fas fa-angle-double-right"> Voir</i></button> }
+
   </div>
   </div>
 </div>
 </div> 
 
         
-        <div className="row">
-        <div className="col">
+        <div className="row">        <div className="col">
           <div className="cards">
           <img className="ca" alt="100%x180" src={this.props.info.image} style={{height: "180px", width: "300px", display: "block"}}/>
           <div className="card-block">
@@ -85,6 +88,7 @@ handleClick(e) {
           </div>
           </div>
           </div>    
+   
         </div>
     
         </ReactCardFlip> 
