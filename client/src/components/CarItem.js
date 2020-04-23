@@ -90,10 +90,8 @@ handleClick(e) {
           </div>
           </div>
           </div>    
-   
-      
         </div>
-    
+        
         </ReactCardFlip> 
      </div>
     )
