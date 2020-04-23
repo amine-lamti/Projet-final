@@ -54,6 +54,7 @@ handleClick(e) {
       <div className="voitue">
         
 
+     
  <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">  
 
  <div className="row">         
@@ -73,6 +74,7 @@ handleClick(e) {
 
         
         <div className="row">        <div className="col">
+       
           <div className="cards">
           <img className="ca" alt="100%x180" src={this.props.info.image} style={{height: "180px", width: "300px", display: "block"}}/>
           <div className="card-block">
@@ -89,6 +91,7 @@ handleClick(e) {
           </div>
           </div>    
    
+      
         </div>
     
         </ReactCardFlip> 

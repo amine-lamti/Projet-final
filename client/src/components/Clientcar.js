@@ -41,6 +41,8 @@ class Clientcar extends Component {
 
         <h4 className="h4">prix entre</h4>
       
+
+     
         <div className="form-group">
           <label>Max:</label>
           <input type="text" className="form-control" name="max" value={this.state.max === 1000000 ? "" : this.state.max} onChange={this.handleChange} />
@@ -63,7 +65,7 @@ class Clientcar extends Component {
         </div><div>
           <input value="mercedes" id="mercedes" type="radio" checked={this.state.type === 'mercedes' ? true : false} class="form-check-input" name="type" onClick={this.handleChange} />
           <label htmlFor="mercedes">mercedes</label>
-         
+
         </div><div>
           <input value="Audi" id="Audi" type="radio" checked={this.state.type === 'Audi' ? true : false} class="form-check-input" name="type" onClick={this.handleChange} />
           <label htmlFor="Audi">Audi</label>
@@ -71,7 +73,6 @@ class Clientcar extends Component {
           <input value="Dacia" id="Dacia" type="radio" class="form-check-input" checked={this.state.type === 'Dacia' ? true : false} name="type" onClick={this.handleChange} />
           <label htmlFor="Dacia"> Dacia
 </label>  
-          
         </div>
         <div>
           <input value="Honda" id="Honda" type="radio" class="form-check-input" checked={this.state.type === 'Honda' ? true : false} name="type" onClick={this.handleChange} />
@@ -102,6 +103,7 @@ class Clientcar extends Component {
           <label htmlFor="Ford"> Ford
 </label>
          
+          
         </div><div>
           <input value="Nissan" id="Nissan" type="radio" class="form-check-input" checked={this.state.type === 'Nissan' ? true : false} name="type" onClick={this.handleChange} />
           <label htmlFor="Nissan">Nissan</label>
@@ -116,6 +118,7 @@ class Clientcar extends Component {
           <label htmlFor="Volkswagen">Volkswagen</label>
         </div>
         
+         
          
         </div>
         </div>

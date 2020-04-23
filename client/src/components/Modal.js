@@ -15,7 +15,7 @@ class ResrverModal extends Component {
             show:false,
             fullname:"",
             email:"",
-            téléphone:"",
+            téléphone:"",  
             startDate: new Date(),
             endDate: new Date()
 
@@ -94,6 +94,7 @@ this.setState({
                 <div className="form-group">
                 <label>Email</label>
                     <input type="text" className="form-control" placeholder="Enter email" name="email"  onChange={this.handleChange}/>
+                   
                 </div>
                 <div className="form-group">
                 <label>Téléphone</label>
