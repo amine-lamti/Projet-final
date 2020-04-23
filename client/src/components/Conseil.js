@@ -16,10 +16,10 @@ function Conseil() {
               <li>Mettez toujours votre ceinture de sécurité.</li>
               <li>Respectez les stops et les feux rouges.</li>
           </ul>  
-          <a className="savoir btn btn-outline-warning btn-sm" href="https://fr.wikihow.com/%C3%A9viter-les-accidents-de-voiture">savoir plus</a>
+         
         </div>
-        <div>
-            <img className="img" src="https://www.argusautomobile.tn/wp-content/uploads/2018/11/accident1.jpg"/>
+        <div className="img">
+            <img src="https://www.argusautomobile.tn/wp-content/uploads/2018/11/accident1.jpg"/>
         </div>
         </div>
     )

@@ -62,6 +62,7 @@
         }
         
         .image {
+            margin-top: 10px;
             margin-left: 100px;
             margin-bottom: 100px;
         }
@@ -79,6 +80,18 @@
         
         .img1 {
             width: 100%;
+        }
+        
+        .img {
+            -webkit-filter: sepia(100%);
+            filter: sepia(100%);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+        }
+        
+        .img:hover {
+            -webkit-filter: sepia(0);
+            filter: sepia(0);
         }
         
         .txt {
@@ -119,8 +132,6 @@
         
         .conseil {
             display: flex;
-            padding: 0px;
-            margin: 0px;
         }
         
         .savoir {
@@ -158,7 +169,6 @@
             background-size: cover;
             height: 300px;
             background-attachment: fixed;
-            margin-top: 30px;
         }
         
         .scroll-image-bg1 {
@@ -167,16 +177,17 @@
             background-size: cover;
             height: 300px;
             background-attachment: fixed;
-            margin-top: 30px;
         }
-
-       
-       
+        
         .search {
             margin-top: 100px;
             margin-left: 20px;
             padding-right: 40px;
             padding-top: 10px;
+        }
+        
+        .clear {
+            margin-top: 20px;
         }
         
         .accueil2 {
@@ -190,23 +201,22 @@
         .carstype {
             margin-left: 20px;
         }
-        .flip1{
+        
+        .flip1 {
             color: #D5AF54;
         }
-        .prix{
+        
+        .prix {
             color: slategrey;
         }
-        .flip{
+        
+        .flip {
             color: slategrey;
-
         }
-        .btn{
-            padding-right: 40px;
-            color: #D5AF54;
-
+        
+        .nav {
+            margin-left: 10px;
         }
-        .nav{
-            margin-left: 10px;}
         
         .calendar {
             display: flex;
@@ -215,40 +225,109 @@
         
         .selem {
             display: flex;
-            margin-left: 110px;
+            justify-content: space-around;
+            margin-left: 100px;
         }
         
         .voir {
             margin-left: 130px;
-
-
-       
         }
-        .agenceprofil{
+        
+        .agenceprofil {
             display: flex;
         }
-        .div{
+        
+        .div {
             overflow: scroll;
             height: 250px;
             margin-top: 20px;
             width: 900px;
         }
-        .sm{
-            padding-right: 200px;
-            margin-right: 0px;
-            margin-left: 100px;
-            margin-top: 25px;
-            width: 500px;
-        }
-        .h3{ 
+        
+        .h3 {
             color: #D5AF54;
             margin-top: 60px;
             margin-left: 50px;
             padding-bottom: 10px;
         }
-       .reser{
-           height: 200px;
-           width: 300px ;
-       }
         
-       
+        .reser {
+            height: 200px;
+            width: 300px;
+        }
+        
+        .retour {
+            padding-right: 20px;
+        }
+        
+        .res {
+            margin-bottom: 50px;
+        }
+        
+        .contact {
+            margin-top: 100px;
+            box-sizing: border-box;
+        }
+        
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+        
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+        
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+        /* Clear floats after the columns */
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        
+        @media screen and (max-width: 600px) {
+            .col-25,
+            .col-75,
+            input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+        
+        .alert {
+            margin-top: 80px;
+        }

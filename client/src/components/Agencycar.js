@@ -8,7 +8,7 @@ class Agencycar extends Component {
   componentDidMount() {
     this.props.getagencycar();
 
-    if (this.props.auth.isAuthenticated) {
+    if (this.props.auth.token) {
       this.props.loadUser();
     }
   }

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 class Agencyinfo extends Component {
     componentWillMount() {
-        if (this.props.agence.isAuthenticated) {
+        if (this.props.agence.token) {
             this.props.loadUser()
         }
     }

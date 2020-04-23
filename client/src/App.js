@@ -8,10 +8,11 @@ import Register from './components/Register';
 import Login from './components/Login';
 import Alerts from './components/Alerts';
 import setAuthToken from './utils/setAuthToken';
-import CarItem from './components/CarItem'
-import CarForm from './components/CarForm'
-import Clientcar from './components/Clientcar'
-import Monagence from './components/Monagence'
+import CarItem from './components/CarItem';
+import CarForm from './components/CarForm';
+import Clientcar from './components/Clientcar';
+import Monagence from './components/Monagence';
+import Contact from './components/Contact';
 //import PrivateRoute from './components/PrivateRoute'
 
 if(localStorage.token){
@@ -32,6 +33,7 @@ function App() {
       <Route  path="/carform/:id" component={CarForm}/>
       <Route  path="/cars" component={Clientcar}/>
       <Route  path="/monagence" component={Monagence}/>
+      <Route  path="/contact" component={Contact}/>
     </Switch>
     </BrowserRouter>
     </div>

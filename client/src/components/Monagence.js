@@ -4,6 +4,9 @@ import Agencyinfo from './Agencyinfo'
 import { connect } from 'react-redux'
 import { getagencycar } from '../actions/CarActions'
 import{CardDeck,Card} from 'react-bootstrap'
+import { loadUser } from "../actions/AuthActions";
+
+
 class Monagence extends Component {
     constructor(props) {
         super(props)
@@ -12,9 +15,15 @@ class Monagence extends Component {
 
         };
     }
-    componentDidMount() {
-        this.props.getagencycar();
 
+    componentDidMount() {
+        if (this.props.auth.token) {
+          this.props.loadUser();
+        }
+      }
+
+    componentDidMount() {
+        this.props.getagencycar();   
     }
     render() {
         return (
@@ -51,6 +60,7 @@ class Monagence extends Component {
 const mapStateToProps = (state) => {
     return {
         car: state.Agencyreducer.cars,
+        auth: state.auth
     };
 };
-export default connect(mapStateToProps, { getagencycar })(Monagence);
+export default connect(mapStateToProps, { getagencycar, loadUser })(Monagence);
