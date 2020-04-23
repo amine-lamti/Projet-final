@@ -18,7 +18,7 @@ class Clientcar extends Component {
   componentDidMount() {
     this.props.getclientcar();
 
-    if (this.props.auth.isAuthenticated) {
+    if (this.props.auth.token) {
       this.props.loadUser();
     }
   }
@@ -39,7 +39,7 @@ class Clientcar extends Component {
 <div className="card card-block car-item-card">
 <div className="search">
 
-        <h4 className="h4">prix entre</h4>
+        <h4 className="h4">Prix entre</h4>
       
 
      
@@ -54,17 +54,15 @@ class Clientcar extends Component {
         <br/>
         <h4  className="h4" >Fabricants</h4>
         <div className="carstype">
-        <button onClick={() => this.setState({type: '', min:0, max: 1000000})}>Clear Filter</button>
-
         <div>
           <input value="fiat" id="fiat" checked={this.state.type === 'fiat' ? true : false} type="radio" class="form-check-input" name="type" onClick={this.handleChange} />
-          <label htmlFor="fiat">fiat</label>
+          <label htmlFor="fiat">Fiat</label>
         </div><div>
           <input value="bmw" id="bmw" type="radio" checked={this.state.type === 'bmw' ? true : false} class="form-check-input" name="type" onClick={this.handleChange} />
-          <label htmlFor="bmw">bmw</label>
+          <label htmlFor="bmw">BMW</label>
         </div><div>
           <input value="mercedes" id="mercedes" type="radio" checked={this.state.type === 'mercedes' ? true : false} class="form-check-input" name="type" onClick={this.handleChange} />
-          <label htmlFor="mercedes">mercedes</label>
+          <label htmlFor="mercedes">Mercedes</label>
 
         </div><div>
           <input value="Audi" id="Audi" type="radio" checked={this.state.type === 'Audi' ? true : false} class="form-check-input" name="type" onClick={this.handleChange} />
@@ -118,7 +116,7 @@ class Clientcar extends Component {
           <label htmlFor="Volkswagen">Volkswagen</label>
         </div>
         
-         
+        <button className="btn btn-outline-warning btn-sm clear" onClick={() => this.setState({type: '', min:0, max: 1000000})}>Clear Filter</button>
          
         </div>
         </div>

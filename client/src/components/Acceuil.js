@@ -14,7 +14,7 @@ import Conseil from "./Conseil";
 class Acceuil extends React.Component {
 
   componentWillMount() {
-    if (this.props.auth.isAuthenticated) {
+    if (this.props.auth.token) {
       this.props.loadUser();
     }
   }

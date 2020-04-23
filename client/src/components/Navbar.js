@@ -9,7 +9,7 @@ class Navbar extends Component {
 
     
    componentDidMount() {
-        if (this.props.auth.isAuthenticated) {
+        if (this.props.auth.token) {
           this.props.loadUser();
         }
       }
@@ -40,7 +40,7 @@ class Navbar extends Component {
                    <Link class="nav-link text-dark" to="/cars">Véhicules</Link>
                </li>
                <li class="nav-item">
-                   <Link class="nav-link text-dark" to="/reservation">Réservation</Link>
+                   <Link class="nav-link text-dark" to="/contact">Contact</Link>
                </li>  
                <li class="nav-item">
                    <Link class="nav-link border border-dark bg-dark text-warning" type="button" to="/" data-toggle="modal" data-target="#myModal" onClick={this.logmeout}><i class="fas fa-sign-out-alt"> Déconnexion</i></Link>                
@@ -56,7 +56,7 @@ class Navbar extends Component {
                    <Link class="nav-link text-dark" to="/monagence">Mon Agence</Link>
                </li>
                <li class="nav-item">
-                   <Link class="nav-link text-dark" to="/">Mes Commandes</Link>
+                   <Link class="nav-link text-dark" to="/contact">Contact</Link>
                </li>
                <li class="nav-item ">
                    <Link class="nav-link border border-dark bg-dark text-warning" type="button" to="/" data-toggle="modal" data-target="#myModal" onClick={this.logmeout}><i class="fas fa-sign-out-alt"> Déconnexion</i></Link>                
@@ -83,7 +83,7 @@ class Navbar extends Component {
                    <Link class="nav-link text-warning" to="/cars">Véhicules</Link>
                </li>
                <li class="nav-item">
-                   <Link class="nav-link text-warning" to="/">Contact</Link>
+                   <Link class="nav-link text-warning" to="/contact">Contact</Link>
                </li>            
                 <li class="nav-item">
                     <Link class="nav-link border border-dark bg-warning text-dark" type="button" to="/login" data-toggle="modal" data-target="#myModal"><i class="fas fa-sign-in-alt"> Se connecter</i></Link>                  
