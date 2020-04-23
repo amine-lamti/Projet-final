@@ -12,7 +12,7 @@ class Agencyinfo extends Component {
     render() {
         return (
 <div className="agence">
-  <div class="col-sm-4">
+  <div class="col-sm-4" className="sm">
   <div class="card text-warning bg-dark">
    <div class="card-header bg-warning text-center text-dark">
        <h4>{this.props.agence.user.agence}</h4>

@@ -169,9 +169,9 @@
             background-attachment: fixed;
             margin-top: 30px;
         }
-        .search{
-            margin-top: 50px;
-        
+
+       
+       
         .search {
             margin-top: 100px;
             margin-left: 20px;
@@ -190,7 +190,6 @@
         .carstype {
             margin-left: 20px;
         }
-
         .flip1{
             color: #D5AF54;
         }
@@ -207,8 +206,7 @@
 
         }
         .nav{
-            margin-left: 10px;
-
+            margin-left: 10px;}
         
         .calendar {
             display: flex;
@@ -223,4 +221,34 @@
         .voir {
             margin-left: 130px;
 
+
+       
         }
+        .agenceprofil{
+            display: flex;
+        }
+        .div{
+            overflow: scroll;
+            height: 250px;
+            margin-top: 20px;
+            width: 900px;
+        }
+        .sm{
+            padding-right: 200px;
+            margin-right: 0px;
+            margin-left: 100px;
+            margin-top: 25px;
+            width: 500px;
+        }
+        .h3{ 
+            color: #D5AF54;
+            margin-top: 60px;
+            margin-left: 50px;
+            padding-bottom: 10px;
+        }
+       .reser{
+           height: 200px;
+           width: 300px ;
+       }
+        
+       

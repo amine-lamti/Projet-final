@@ -98,7 +98,7 @@ export const reserver=(reservation)=>dispatch=>{
             'Content-type':'application/json'
                 }
     }
-    axios.put(`/api/agencycar/api/${reservation.id}`,reservation.res,config)
+    axios.put(`/api/agencycar/api/${reservation.id}`,reservation,config)
     .then(res=>dispatch({
         type:EDIT_RESREVATION,
         payload:reservation
