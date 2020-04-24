@@ -67,7 +67,7 @@ class CarForm extends Component {
 
                 
 
-                <button className="btn btn-primary btn-block" onClick={e => {
+                <button className="btn btn-warning btn-block" onClick={e => {
                         e.preventDefault()
                         if (this.props.save) {
                             this.props.editcar(this.state)

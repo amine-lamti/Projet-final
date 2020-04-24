@@ -65,17 +65,17 @@ class Login extends Component {
 
                 <div className="form-group">
                     <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
+                        <input type="checkbox" className="custom-control-input bg-warning" id="customCheck1" />
                         <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
                     </div>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block" onClick={this.loginNow}>Submit</button>
+                <button type="submit" className="btn btn-warning btn-block" onClick={this.loginNow}>Submit</button>
                 <p className="forgot-password text-right">
-                    Forgot <a href="#">password?</a>
+                    Forgot <a href="#" style={{color:"orange"}}>password?</a>
                 </p>
                 <p className="forgot-password text-right">
-                    Don't have an Account <Link to="/register">Sign Up?</Link>
+                    Don't have an Account <Link to="/register" style={{color:"orange"}}>Sign Up?</Link>
                 </p>
             </form>
             </div>
