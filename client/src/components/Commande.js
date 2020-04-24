@@ -6,8 +6,7 @@ import Modal2 from './Modal2'
 
 class Commandes extends Component {
     
-   
-
+  
     componentDidMount() {
       this.props.getagencycar();    
       if (this.props.auth.token) {

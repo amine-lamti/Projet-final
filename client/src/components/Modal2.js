@@ -22,7 +22,7 @@ show:false
           </Button>
           <Modal show={this.state.show} onHide={this.handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Validation finale</Modal.Title>
+              <Modal.Title>Validation Finale</Modal.Title>
             </Modal.Header>
             <Modal.Body>
             <div class="container">
