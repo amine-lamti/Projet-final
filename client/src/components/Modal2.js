@@ -17,12 +17,12 @@ show:false
     render() {
         return (
             <div>
-                <Button variant="primary" onClick={this.handleShow}>
-            confirmer la réservation
+                <Button variant="secondary" onClick={this.handleShow}>
+            Confirmer la réservation
           </Button>
           <Modal show={this.state.show} onHide={this.handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>validation finale</Modal.Title>
+              <Modal.Title>Validation Finale</Modal.Title>
             </Modal.Header>
             <Modal.Body>
             <div class="container">

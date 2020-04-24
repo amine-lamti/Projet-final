@@ -40,6 +40,9 @@ class Navbar extends Component {
                    <Link class="nav-link text-dark" to="/cars">Véhicules</Link>
                </li>
                <li class="nav-item">
+                   <Link class="nav-link text-dark" to="/">Mes Réservations</Link>
+               </li>
+               <li class="nav-item">
                    <Link class="nav-link text-dark" to="/contact">Contact</Link>
                </li>  
                <li class="nav-item">
@@ -54,6 +57,9 @@ class Navbar extends Component {
                </li>
                <li class="nav-item">
                    <Link class="nav-link text-dark" to="/monagence">Mon Agence</Link>
+               </li>
+               <li class="nav-item">
+                   <Link class="nav-link text-dark" to="/commande">Mes Commandes</Link>
                </li>
                <li class="nav-item">
                    <Link class="nav-link text-dark" to="/contact">Contact</Link>
