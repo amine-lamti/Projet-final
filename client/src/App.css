@@ -43,7 +43,7 @@
         
         .sign {
             text-align: center;
-            color: #0069D9;
+            color: orange;
             margin-bottom: 30px;
         }
         
@@ -156,11 +156,6 @@
             box-shadow: 6px 9px 13px -8px rgba(0, 0, 0, 0.75);
         }
         
-        .agence {
-            margin-top: 100px;
-            margin-left: 50px;
-        }
-        
         .carou {
             margin-right: 100px;
             width: 100px;
@@ -235,17 +230,6 @@
         
         .voir {
             margin-left: 130px;
-        }
-        
-        .agenceprofil {
-            display: flex;
-        }
-        
-        .div {
-            overflow: scroll;
-            height: 250px;
-            margin-top: 20px;
-            width: 900px;
         }
         
         .h3 {
@@ -345,4 +329,18 @@
         
         .lam {
             margin-left: 400px;
+        }
+        
+        .table {
+            margin-top: 100px;
+        }
+        
+        .agence {
+            margin-top: 100px;
+            margin-left: 30px;
+            width: 800px;
+        }
+        
+        .agency {
+            display: flex;
         }
