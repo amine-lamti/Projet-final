@@ -5,26 +5,20 @@ import { connect } from 'react-redux'
 import { getagencycar } from '../actions/CarActions'
 import{CardDeck,Card} from 'react-bootstrap'
 import { loadUser } from "../actions/AuthActions";
-
+import Modal2 from './Modal2'
 
 class Monagence extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            data: {}
-
-        };
-    }
+    
+   
 
     componentDidMount() {
-        if (this.props.auth.token) {
+      this.props.getagencycar();    
+      if (this.props.auth.token) {
           this.props.loadUser();
         }
       }
 
-    componentDidMount() {
-        this.props.getagencycar();   
-    }
+    
     render() {
         return (
             <div><div className="agenceprofil">
@@ -41,10 +35,10 @@ class Monagence extends Component {
 
   <Card.Title>{el.startDate}</Card.Title>
   <Card.Title>{el.endDate}</Card.Title>
-   
-    </Card.Body>
+
+    </Card.Body> 
     <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
+    <Modal2 email={el.email}/>
     </Card.Footer>
   </Card></div>) )}
   </CardDeck></div>

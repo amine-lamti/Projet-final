@@ -103,6 +103,9 @@
         
         .txt1 {
             color: #D5AF54;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 10px;
         }
         
         .col1 {
@@ -155,6 +158,7 @@
         
         .agence {
             margin-top: 100px;
+            margin-left: 50px;
         }
         
         .carou {
@@ -330,4 +334,15 @@
         
         .alert {
             margin-top: 80px;
+            width: 1000px;
+            margin-left: 150px;
+        }
+        
+        .lamti {
+            background-color: #F5F4F1;
+            margin-right: 100px;
+        }
+        
+        .lam {
+            margin-left: 400px;
         }
