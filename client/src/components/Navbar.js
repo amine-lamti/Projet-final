@@ -40,7 +40,7 @@ class Navbar extends Component {
                    <Link class="nav-link text-dark" to="/cars">Véhicules</Link>
                </li>
                <li class="nav-item">
-                   <Link class="nav-link text-dark" to="/">Mes Réservations</Link>
+                   <Link class="nav-link text-dark" to="/commande2">Mes Réservations</Link>
                </li>
                <li class="nav-item">
                    <Link class="nav-link text-dark" to="/contact">Contact</Link>

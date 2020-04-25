@@ -61,9 +61,9 @@ this.setState({
     endDate: this.state.endDate,
     id:this.props.info._id,
     modele:this.props.info.modele,
-    image:this.props.info.image
+    image:this.props.info.image,
+    user:this.props.auth.user._id
             })
-this.setState({show:false})
 this.setState({
     show:false,
     fullname:"",
@@ -131,5 +131,10 @@ this.setState({
         );
     }
 }
+const mapStateToProps = (state) => {
+  return {
+      auth: state.auth
+  };
+};
 
-export default connect(null,{reserver})(ResrverModal);
+export default connect(mapStateToProps,{reserver})(ResrverModal);
