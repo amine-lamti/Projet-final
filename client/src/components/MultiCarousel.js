@@ -13,7 +13,7 @@ class MultiCarousel extends Component {
 
   render() {
    
-    return (
+    return ( 
              <div className="item">
           <Carousel controls={false}>
           
