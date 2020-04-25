@@ -95,6 +95,7 @@ router.put("/api/:id",auth,(req,res)=>{
         modele:req.body.modele,
         image:req.body.image,
         endDate:req.body.endDate,
+        user:req.body.user
 
 
     }}},(err,data)=>{

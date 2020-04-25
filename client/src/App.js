@@ -14,6 +14,7 @@ import Clientcar from './components/Clientcar';
 import Monagence from './components/Monagence';
 import Contact from './components/Contact';
 import Commande from './components/Commande';
+import commande2 from './components/commande2';
 //import PrivateRoute from './components/PrivateRoute'
 
 if(localStorage.token){
@@ -36,8 +37,12 @@ function App() {
       <Route  path="/monagence" component={Monagence}/>
       <Route  path="/contact" component={Contact}/>
       <Route  path="/commande" component={Commande}/>
+      <Route  path="/commande2" component={commande2}/>
+
     </Switch>
+    
     </BrowserRouter>
+
     </div>
      
   );
