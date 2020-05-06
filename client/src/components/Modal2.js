@@ -5,7 +5,7 @@ class Modal2 extends Component {
     constructor(props) {
         super(props)
         this.state = {
-show:false
+        show:false
         };
     }
     handleClose=()=>{
@@ -52,7 +52,7 @@ show:false
       <textarea id="subject" name="subject" placeholder="Write something.." style={{height:"200px"}}></textarea>
     </div>
   </div>
-    <button >Envoyer</button>
+    <button>Envoyer</button>
     </form>
     </div>
     </Modal.Body>
