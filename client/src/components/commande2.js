@@ -15,7 +15,7 @@ class commande2 extends Component {
             <div >
             <div class="container table">
                <h1>Mes Réservations</h1>
-               {this.props.car.map(el=> el.reservation.map(el=> el.user=== this.props.auth.user._id && <div>
+               {this.props.car.map(el=> el.reservation.map(el=> el.user === this.props.auth.user._id && <div>
                <table class="table table-striped">
                  <thead>
                    <tr>
